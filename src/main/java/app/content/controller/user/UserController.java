@@ -1,5 +1,6 @@
 package app.content.controller.user;
 
+import app.content.ExceptionManager;
 import app.content.domain.Response;
 import app.content.service.user.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ public class UserController {
     @CrossOrigin
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     @ResponseBody
-    public Response createNewUser(@RequestBody String jsonUser){
+    public Response createNewUser(@RequestBody String jsonUser) throws ExceptionManager {
         System.out.println("ENTRA A CREAR NEW USER "+jsonUser);
         return userServices.createNewUserService(jsonUser);
     }
