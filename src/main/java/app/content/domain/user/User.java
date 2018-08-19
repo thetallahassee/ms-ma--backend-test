@@ -1,21 +1,23 @@
-package app.content.domain;
+package app.content.domain.user;
 
 import app.content.ExceptionManager;
+import app.content.domain.UserParams;
 import app.content.service.GeneralServices;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
-public class User {
+public class User extends UserParams {
     @Autowired
     GeneralServices generalServices;
     @Id
     private String userName;
 
     private String password;
+    private Date registerDate;
 
     public User(String userName, String password) throws ExceptionManager{
         this.userName = userName;
@@ -36,5 +38,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
     }
 }
