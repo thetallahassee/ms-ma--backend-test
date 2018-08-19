@@ -1,6 +1,7 @@
-package app.content.controller;
+package app.content.controller.user;
 
-import app.content.service.UserServices;
+import app.content.domain.Response;
+import app.content.service.user.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +14,8 @@ public class UserController {
     @CrossOrigin
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     @ResponseBody
-    public void createNewUser(@RequestBody String jsonUser){
+    public Response createNewUser(@RequestBody String jsonUser){
         System.out.println("ENTRA A CREAR NEW USER "+jsonUser);
-        //userServices.createNewUserService(jsonUser);
+        return userServices.createNewUserService(jsonUser);
     }
 }

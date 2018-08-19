@@ -8,15 +8,13 @@ import javax.persistence.Id;
 @Entity
 public class User {
     @Id
-    @JsonProperty("userName")
     private String userName;
 
-    @JsonProperty("userName")
     private String password;
 
     public User(String userName, String password) {
         this.userName = userName;
-        this.password = password;
+        //this.password = password;
     }
 
     public String getUserName() {
