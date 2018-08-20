@@ -19,7 +19,7 @@ public class LoginServices {
         String message;
         User user = generalServices.mappingUser(jsonUserParams);
 
-        if(myApplication.getUsersLogged() == null){
+        if(myApplication.getUserLoggedNow() == null){
             loginToApp(user);
             code = 200;
             message = "User logged OK";
@@ -32,7 +32,7 @@ public class LoginServices {
 
     private void loginToApp(User user) {
         Login login = new Login(user);
-        myApplication.setUsersLogged(login);
+        myApplication.setUserLoggedNow(login);
     }
 
     private boolean checkUserPasswd(User userToLogin){
@@ -43,6 +43,6 @@ public class LoginServices {
     }
 
     public void logOut() {
-        myApplication.setUsersLogged(null);
+        myApplication.setUserLoggedNow(null);
     }
 }

@@ -17,4 +17,8 @@ public class Login {
     public User getUserLogged() {
         return userLogged;
     }
+
+    public void setUserLogged(User userLogged) {
+        this.userLogged = userLogged;
+    }
 }

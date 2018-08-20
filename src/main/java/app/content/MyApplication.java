@@ -1,6 +1,7 @@
 package app.content;
 
 import app.content.modal.Visibility;
+import app.content.modal.friendly.State;
 import app.content.modal.login.Login;
 import app.content.modal.user.User;
 
@@ -9,23 +10,29 @@ import java.util.List;
 
 public class MyApplication {
     private List<User> userList;
-    private List<Visibility> visibilityList;
+    public List<Visibility> visibilityList;
+    private List<State>friendStatesOptions;
 
-    private Login usersLogged;
+    private Login userLoggedNow;
 
-    public Login getUsersLogged() {
-        return usersLogged;
+    public Login getUserLoggedNow() {
+        return userLoggedNow;
     }
 
-    public void setUsersLogged(Login usersLogged) {
-        this.usersLogged = usersLogged;
+    public void setUserLoggedNow(Login userLoggedNow) {
+        this.userLoggedNow = userLoggedNow;
     }
 
     public void initDefaultParams(){
         initUsertList();
         initDefaultOptionsVisibility();
-        this.setUsersLogged(null);
+        initDefaultOptionsState();
+        this.setUserLoggedNow(null);
         //initLoginList();
+    }
+
+    private void initDefaultOptionsState() {
+        friendStatesOptions = new ArrayList<>();
     }
 
     private void initUsertList(){
@@ -72,15 +79,7 @@ public class MyApplication {
         return userList;
     }
 
-    public Visibility getVisibilityTypeFromCode(String code){
-        Visibility visResp = null;
-        for(Visibility visibilityLoop:this.visibilityList){
-            if(visibilityLoop.getCode().equals(code)){
-                visResp = visibilityLoop;
-            }
-        }
-        return visResp;
-    }
+
 
     private void initDefaultOptionsVisibility() {
         Visibility v1 = new Visibility("001","Hidden", true, false);

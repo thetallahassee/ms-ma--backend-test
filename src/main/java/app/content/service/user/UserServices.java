@@ -1,8 +1,10 @@
 package app.content.service.user;
 
 import app.content.modal.Response;
+import app.content.modal.Visibility;
 import app.content.modal.user.User;
 import app.content.service.GeneralServices;
+import app.content.service.VisibilityServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ import static app.StartApp.myApplication;
 public class UserServices {
     @Autowired
     GeneralServices generalServices;
+    VisibilityServices visibilityServices;
     public Response createNewUserService(String jsonUser){
         int code = 0;
         String message = "";
@@ -23,7 +26,7 @@ public class UserServices {
                         generalServices.patternOnlyLetterAndNumber(user.getPassword())){
                     if(userNameIsUnique(user.getUserName())){
                         user.setRegisterDate(new Date());
-                        user.setVisibility(myApplication.getVisibilityTypeFromCode("001"));
+                        user.setVisibility(visibilityServices.getVisibilityTypeFromCode("001"));
                         myApplication.addUserInUserList(user);
                         code = 200;
                         message = "User"+user.getUserName()+" created OK";
@@ -52,5 +55,34 @@ public class UserServices {
         }
         return unique;
     }
+
+    /*public User modifyParamsFromUser(String userParams){
+        User userPar = generalServices.mappingUser(userParams);
+        if(userPar.getUserName().equals(myApplication.getUserLoggedNow().getUserLogged().getUserName())){
+
+        }
+    }*/
+
+    public Response updateUserParamsVisibility(String userParStr){
+        User userNewParams = generalServices.mappingUser(userParStr);
+        Response response = new Response(400, "Error to modify visibility or user not found");
+        if(userNewParams.getUserName().equals(myApplication.getUserLoggedNow().getUserLogged().getUserName())) {
+            for (User user : myApplication.getUserList()) {
+                if (user.getUserName().equals(userNewParams.getUserName())) {
+                    user.setVisibility(visibilityServices.getVisibilityTypeFromCode(userNewParams.getVisibility().getCode()));
+                    response.setCode(200);
+                    response.setMessage("Visibility updated OK");
+                }
+            }
+        }
+        return response;
+    }
+    /*public User getUserFromListByUserName(String userName){
+        for(User user:myApplication.getUserList()){
+            if(user.getUserName().equals(userName)){
+
+            }
+        }
+    }*/
 }
 

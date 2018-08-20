@@ -19,4 +19,12 @@ public class UserController {
         System.out.println("ENTRA A CREAR NEW USER "+jsonUser);
         return userServices.createNewUserService(jsonUser);
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "/new", method = RequestMethod.PUT)
+    @ResponseBody
+    public Response modifyUser(@RequestBody String jsonUser) throws ExceptionManager {
+        System.out.println("ENTRA A CREAR NEW USER "+jsonUser);
+        return userServices.updateUserParamsVisibility(jsonUser);
+    }
 }
