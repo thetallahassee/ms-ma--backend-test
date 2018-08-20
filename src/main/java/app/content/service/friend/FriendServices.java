@@ -31,6 +31,26 @@ public class FriendServices {
 
     }
 
+    public Response acceptNewFriend(String userNameToAdd){
+        Response response = null;
+
+        UserToFind userTemp = new Gson().fromJson(userNameToAdd, UserToFind.class);
+        boolean isInWaitList = loopListsFriend(userTemp.getUserName(),myUser.getWaitFriendsList());
+        boolean isInMyFriendsList = loopListsFriend(userTemp.getUserName(),myUser.getFriendsList());
+        User userReject = userServices.getUserFromListByUserName(userTemp.getUserName());
+        if(isInWaitList){
+            myUser.addFriend(userReject.getUserName());
+        }else if(isInMyFriendsList){
+            response.setCode(400);
+            response.setMessage("this user is already your friend");
+        }else{
+            response.setCode(400);
+            response.setMessage("User not found");
+        }
+
+        return response;
+    }
+
     public Response declineFriendResponse(String userNameToDecline){
         //User myUser = myApplication.getUserLoggedNow().getUserLogged();
         Response response = null;

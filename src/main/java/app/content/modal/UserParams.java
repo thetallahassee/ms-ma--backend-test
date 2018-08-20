@@ -10,7 +10,7 @@ public abstract class UserParams {
     private Visibility visibility;
     private List<String> friendsList = new ArrayList<>();
     private List<String> waitFriendsList = new ArrayList<>();
-    private List<String> rejectionFriendsList = new ArrayList<>();
+    //private List<String> rejectionFriendsList = new ArrayList<>();
     private int rejections = 0;
     private boolean nobodyLovesYou = false;
 
@@ -22,23 +22,21 @@ public abstract class UserParams {
         this.visibility = visibility;
     }
 
-    public void addFriend(User userFriend){
-        this.friendsList.add(userFriend.getUserName());
-        deleteWaitingFriend(userFriend.getUserName());
+    public void addFriend(String userFriend){
+        this.friendsList.add(userFriend);
+        deleteWaitingFriend(userFriend);
     }
     public void addWaitingFriend(User userFriend){
         this.waitFriendsList.add(userFriend.getUserName());
         deleteWaitingFriend(userFriend.getUserName());
     }
 
-    public void rejectFriend(User userFriend){
+    /*public void rejectFriend(User userFriend){
         this.rejectionFriendsList.add(userFriend.getUserName());
         //deleteWaitingFriend(userFriend.getUserName());
-    }
+    }*/
 
     public void deleteWaitingFriend(String username){
-        //List<User> filteredList = nums.stream().filter(i -> i >= 3).collect(Collectors.toList());
-
         Iterator itr = this.waitFriendsList.iterator();
 
         while (itr.hasNext()){

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1211b41e-38ac-4940-873e-60799a47cf78" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java" />
     </list>
@@ -43,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FriendController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FriendController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="315">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,8 +57,8 @@
       <file leaf-file-name="FriendServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="698">
-              <caret line="63" column="73" lean-forward="true" selection-start-line="63" selection-start-column="73" selection-end-line="63" selection-end-column="73" />
+            <state relative-caret-position="338">
+              <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,18 +106,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserParams.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserParams.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="28" />
+            <state relative-caret-position="375">
+              <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
               <folding>
-                <element signature="e#2269#2270#0" expanded="true" />
-                <element signature="e#2303#2304#0" expanded="true" />
-                <element signature="e#2351#2352#0" expanded="true" />
-                <element signature="e#2389#2390#0" expanded="true" />
-                <element signature="e#2430#2431#0" expanded="true" />
-                <element signature="e#2467#2468#0" expanded="true" />
+                <element signature="e#2148#2149#0" expanded="true" />
+                <element signature="e#2182#2183#0" expanded="true" />
+                <element signature="e#2230#2231#0" expanded="true" />
+                <element signature="e#2268#2269#0" expanded="true" />
+                <element signature="e#2309#2310#0" expanded="true" />
+                <element signature="e#2346#2347#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -232,9 +231,9 @@
         <option value="$PROJECT_DIR$/src/main/java/app/content/modal/Response.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/service/GeneralServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/modal/friendly/UserToFind.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java" />
       </list>
     </option>
   </component>
@@ -1077,37 +1076,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="28" />
+        <state relative-caret-position="315">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding>
-            <element signature="e#2269#2270#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
-            <element signature="e#2389#2390#0" expanded="true" />
-            <element signature="e#2430#2431#0" expanded="true" />
-            <element signature="e#2467#2468#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="63" column="73" lean-forward="true" selection-start-line="63" selection-start-column="73" selection-end-line="63" selection-end-column="73" />
+        <state relative-caret-position="338">
+          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="375">
+          <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2148#2149#0" expanded="true" />
+            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#2230#2231#0" expanded="true" />
+            <element signature="e#2268#2269#0" expanded="true" />
+            <element signature="e#2309#2310#0" expanded="true" />
+            <element signature="e#2346#2347#0" expanded="true" />
           </folding>
         </state>
       </provider>
