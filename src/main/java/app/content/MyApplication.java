@@ -11,38 +11,26 @@ public class MyApplication {
     private List<User> userList;
     private List<Visibility> visibilityList;
 
-    private List<Login> usersLogged;
+    private Login usersLogged;
 
-    public void addUserLogged(Login userLoggin){
-        usersLogged.add(userLoggin);
+    public Login getUsersLogged() {
+        return usersLogged;
     }
 
-    public void removeUserLogged(String username){}
+    public void setUsersLogged(Login usersLogged) {
+        this.usersLogged = usersLogged;
+    }
 
     public void initDefaultParams(){
         initUsertList();
         initDefaultOptionsVisibility();
-        initLoginList();
-    }
-
-    private void initLoginList(){
-        this.usersLogged = new ArrayList<>();
+        this.setUsersLogged(null);
+        //initLoginList();
     }
 
     private void initUsertList(){
         System.out.println("INICIAR LISTA");
         this.userList = new ArrayList<>();
-    }
-
-    public boolean isUserLogged(String userName){
-        boolean isExists=false;
-        for(Login userLoop:this.usersLogged){
-            if(userLoop.getUserLogged().getUserName().equals(userName)){
-                isExists = true;
-                break;
-            }
-        }
-        return isExists;
     }
 
     public boolean userExists(String userName){
