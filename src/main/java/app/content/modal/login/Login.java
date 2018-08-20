@@ -1,6 +1,6 @@
-package app.content.domain.login;
+package app.content.modal.login;
 
-import app.content.domain.user.User;
+import app.content.modal.user.User;
 
 import java.util.Date;
 

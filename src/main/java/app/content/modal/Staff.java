@@ -1,4 +1,4 @@
-package app.content.domain;
+package app.content.modal;
 
 import java.math.BigDecimal;
 import java.util.List;

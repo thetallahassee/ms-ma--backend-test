@@ -1,7 +1,7 @@
 package app.content.controller.login;
 
 import app.content.ExceptionManager;
-import app.content.domain.Response;
+import app.content.modal.Response;
 import app.content.service.login.LoginServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

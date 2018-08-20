@@ -1,8 +1,8 @@
 package app.content;
 
-import app.content.domain.Visibility;
-import app.content.domain.login.Login;
-import app.content.domain.user.User;
+import app.content.modal.Visibility;
+import app.content.modal.login.Login;
+import app.content.modal.user.User;
 
 import java.util.ArrayList;
 import java.util.List;

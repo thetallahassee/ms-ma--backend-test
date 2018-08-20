@@ -1,26 +1,15 @@
 import app.content.ExceptionManager;
-import app.content.domain.Response;
-import app.content.domain.user.User;
-import ch.qos.logback.classic.Level;
-import net.minidev.json.JSONObject;
-import org.apache.logging.log4j.LogManager;
+import app.content.modal.Response;
+import app.content.modal.user.User;
 import org.junit.jupiter.api.Test;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.HttpClientBuilder;
 import com.google.gson.Gson;
-import org.junit.platform.commons.logging.LoggerFactory;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 
 class Test1 {
@@ -42,8 +31,6 @@ class Test1 {
         String path = "http://localhost:8080/user/new";
 
         int random = (int)(Math.random()*100);
-        //
-        // for(int i=0; i < 5; i++){
             try {
                 User user = new User("user"+random,"abc");
                 String userSenParam = gson.toJson(user);
@@ -65,9 +52,6 @@ class Test1 {
                 response.setMessage(e.getMessage());
                 errorList.add(response);
             }
-
-            //errorsListPrint();
-        //}
     }
 
     private void insertFourUsers(){

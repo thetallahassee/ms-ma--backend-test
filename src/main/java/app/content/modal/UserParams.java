@@ -1,6 +1,6 @@
-package app.content.domain;
+package app.content.modal;
 
-import app.content.domain.user.User;
+import app.content.modal.user.User;
 
 import java.util.Iterator;
 import java.util.List;

@@ -1,8 +1,8 @@
 package app.content.service.login;
 
-import app.content.domain.Response;
-import app.content.domain.login.Login;
-import app.content.domain.user.User;
+import app.content.modal.Response;
+import app.content.modal.login.Login;
+import app.content.modal.user.User;
 import app.content.service.GeneralServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

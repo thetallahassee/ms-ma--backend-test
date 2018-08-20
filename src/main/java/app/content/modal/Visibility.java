@@ -1,4 +1,4 @@
-package app.content.domain;
+package app.content.modal;
 
 public class Visibility {
     private String code;

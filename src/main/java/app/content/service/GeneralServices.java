@@ -1,6 +1,6 @@
 package app.content.service;
 
-import app.content.domain.user.User;
+import app.content.modal.user.User;
 import com.google.gson.Gson;
 import org.springframework.stereotype.Service;
 
