@@ -2,14 +2,17 @@ package app.content.modal;
 
 import app.content.modal.user.User;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public abstract class UserParams {
     private Visibility visibility;
-    private List<User> friendsList;
-    private List<User> waitFriendsList;
-    private List<User> rejectionFriendsList;
+    private List<User> friendsList = new ArrayList<>();
+    private List<User> waitFriendsList = new ArrayList<>();
+    private List<User> rejectionFriendsList = new ArrayList<>();
+    private int rejections = 0;
+    private boolean nobodyLovesYou = false;
 
     public Visibility getVisibility() {
         return visibility;
@@ -39,6 +42,17 @@ public abstract class UserParams {
             if(x.getUserName().equals(username)){
                 itr.remove();
             }
+        }
+    }
+
+    public int getRejections() {
+        return rejections;
+    }
+
+    public void setRejections() {
+        this.rejections ++;
+        if(this.rejections >= 3){
+            this.nobodyLovesYou = true;
         }
     }
 }
