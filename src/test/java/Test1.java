@@ -16,12 +16,60 @@ class Test1 {
     List<Response> errorList = new ArrayList<>();
     Response response;
     Gson gson = new Gson();
-
+    List<User> userList = new ArrayList<>();
+    User userToLog;
     @Test
     void runAllTest(){
         insertUser();
         insertFourUsers();
+        userToLog = userList.get(0);
+        login();
+        logOut();
+        login();
+
+
         errorsListPrint();
+    }
+
+    @Test
+    void login(){
+        String userToLogin = gson.toJson(userToLog);
+        String path = "http://localhost:8080/auth/login";
+        try {
+            response = sendPost(userToLogin, path);
+            if(response.getCode()==200){
+                System.out.println("OK: "+response.getMessage());
+            }else{
+                errorList.add(response);
+                System.err.println("BAD: "+response.getMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setCode(410);
+            response.setMessage(e.getMessage());
+            errorList.add(response);
+        }
+    }
+
+    @Test
+    void logOut(){
+        String userToLogOut = gson.toJson(userToLog);
+        String path = "http://localhost:8080/auth/logout";
+        try {
+            response = sendPost(userToLogOut, path);
+            if(response.getCode()==200){
+                System.out.println("OK: "+response.getMessage());
+                userToLog = null;
+            }else{
+                errorList.add(response);
+                System.err.println("BAD: "+response.getMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setCode(410);
+            response.setMessage(e.getMessage());
+            errorList.add(response);
+        }
     }
 
     @Test
@@ -37,6 +85,7 @@ class Test1 {
                 resp = sendPost(userSenParam, path);
                 if(resp.getCode()==200){
                     System.out.println("User insert OK: "+user.getUserName());
+                    userList.add(user);
                 }else{
                     errorList.add(resp);
                     System.err.println("Error to insert"+user.getUserName());
