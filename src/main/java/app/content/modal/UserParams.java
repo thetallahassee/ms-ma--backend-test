@@ -1,18 +1,24 @@
 package app.content.modal;
 
 import app.content.modal.user.User;
+import app.content.service.VisibilityServices;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public abstract class UserParams {
+
     private Visibility visibility;
     private List<String> friendsList = new ArrayList<>();
     private List<String> waitFriendsList = new ArrayList<>();
     //private List<String> rejectionFriendsList = new ArrayList<>();
     private int rejections = 0;
     private boolean nobodyLovesYou = false;
+
+    public UserParams() {
+    }
 
     public Visibility getVisibility() {
         return visibility;

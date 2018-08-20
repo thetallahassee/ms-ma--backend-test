@@ -31,6 +31,10 @@ public class MyApplication {
         //initLoginList();
     }
 
+    public List<Visibility> getVisibilityList() {
+        return visibilityList;
+    }
+
     private void initDefaultOptionsState() {
         friendStatesOptions = new ArrayList<>();
     }
@@ -85,7 +89,7 @@ public class MyApplication {
         Visibility v1 = new Visibility("001","Hidden", true, false);
         Visibility v2 = new Visibility("002", "Public",true,true);
         this.visibilityList = new ArrayList<>();
-        visibilityList.add(v1);
-        visibilityList.add(v2);
+        this.visibilityList.add(v1);
+        this.visibilityList.add(v2);
     }
 }

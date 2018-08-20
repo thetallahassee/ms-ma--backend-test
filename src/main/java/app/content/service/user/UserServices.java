@@ -16,6 +16,7 @@ import static app.StartApp.myApplication;
 public class UserServices {
     @Autowired
     GeneralServices generalServices;
+    @Autowired
     VisibilityServices visibilityServices;
     public Response createNewUserService(String jsonUser){
         int code = 0;

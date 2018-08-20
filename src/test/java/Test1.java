@@ -1,5 +1,6 @@
 import app.content.ExceptionManager;
 import app.content.modal.Response;
+import app.content.modal.friendly.UserToFind;
 import app.content.modal.user.User;
 import org.junit.jupiter.api.Test;
 
@@ -18,9 +19,11 @@ class Test1 {
     Gson gson = new Gson();
     List<User> userList = new ArrayList<>();
     User userToLog;
+    String nameGen = "user1";
+    String passwdGen = "abc";
     @Test
     void runAllTest(){
-        insertUser();
+        /*insertUser();
         insertFourUsers();
         userToLog = userList.get(0);
         login();
@@ -28,14 +31,39 @@ class Test1 {
         login();
 
 
+        errorsListPrint();*/
+    }
+
+    @Test
+    void testInsertUser(){
+        insertUser();
         errorsListPrint();
     }
 
     @Test
+    void testInsertFourUser(){
+        insertFourUsers();
+        userToLog = userList.get(0);
+        errorsListPrint();
+    }
+
+    @Test
+    void testLogin(){
+        login();
+        errorsListPrint();
+    }
+
+    @Test
+    void testLogOut(){
+        logOut();
+        errorsListPrint();
+    }
+
     void login(){
-        String userToLogin = gson.toJson(userToLog);
+
         String path = "http://localhost:8080/auth/login";
         try {
+            String userToLogin = gson.toJson(new User(nameGen,passwdGen));
             response = sendPost(userToLogin, path);
             if(response.getCode()==200){
                 System.out.println("OK: "+response.getMessage());
@@ -51,11 +79,12 @@ class Test1 {
         }
     }
 
-    @Test
+
     void logOut(){
-        String userToLogOut = gson.toJson(userToLog);
+        //String userToLogOut = gson.toJson(userToLog);
         String path = "http://localhost:8080/auth/logout";
         try {
+            String userToLogOut = gson.toJson(new UserToFind(nameGen));
             response = sendPost(userToLogOut, path);
             if(response.getCode()==200){
                 System.out.println("OK: "+response.getMessage());
@@ -72,15 +101,15 @@ class Test1 {
         }
     }
 
-    @Test
+
     void insertUser(){
         System.out.println("****INSERT USER TEST****");
         Response resp = null;
         String path = "http://localhost:8080/user/new";
 
-        int random = (int)(Math.random()*100);
+        //int random = (int)(Math.random()*100);
             try {
-                User user = new User("user"+random,"abc");
+                User user = new User(nameGen,passwdGen);
                 String userSenParam = gson.toJson(user);
                 resp = sendPost(userSenParam, path);
                 if(resp.getCode()==200){
@@ -105,7 +134,32 @@ class Test1 {
 
     private void insertFourUsers(){
         for(int i=0; i<5; i++){
-            insertUser();
+            Response resp = null;
+            String path = "http://localhost:8080/user/new";
+
+            int random = (int)(Math.random()*100);
+            try {
+                User user = new User("user"+random,"abc");
+                String userSenParam = gson.toJson(user);
+                resp = sendPost(userSenParam, path);
+                if(resp.getCode()==200){
+                    System.out.println("User insert OK: "+user.getUserName());
+                    userList.add(user);
+                }else{
+                    errorList.add(resp);
+                    System.err.println("Error to insert"+user.getUserName());
+                }
+            } catch (ExceptionManager exceptionManager) {
+                exceptionManager.printStackTrace();
+                response.setCode(410);
+                response.setMessage(exceptionManager.getMessage());
+                errorList.add(response);
+            } catch (Exception e) {
+                e.printStackTrace();
+                response.setCode(410);
+                response.setMessage(e.getMessage());
+                errorList.add(response);
+            }
         }
     }
     private void errorsListPrint(){
