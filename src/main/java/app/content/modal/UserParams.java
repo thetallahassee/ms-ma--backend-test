@@ -49,11 +49,26 @@ public abstract class UserParams {
         }
     }
 
+    public void deleteFriend(String username){
+        //List<User> filteredList = nums.stream().filter(i -> i >= 3).collect(Collectors.toList());
+
+        Iterator itr = this.friendsList.iterator();
+
+        while (itr.hasNext()){
+            User x = (User)itr.next();
+            if(x.getUserName().equals(username)){
+                itr.remove();
+            }
+        }
+    }
+
     public int getRejections() {
+
         return rejections;
     }
 
     public void setRejections() {
+        System.out.println("NEW REJECTION, TOTAL: "+this.rejections);
         this.rejections ++;
         if(this.rejections >= 3){
             this.nobodyLovesYou = true;

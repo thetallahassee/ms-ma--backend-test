@@ -20,10 +20,17 @@ public class FriendController {
     }
 
     @CrossOrigin
-    @RequestMapping(value = "/declineRquest", method = RequestMethod.PUT)
+    @RequestMapping(value = "/declineRquest", method = RequestMethod.PUT)//sirve para cargarse amigos o solicitudes
     @ResponseBody
     public Response declineRquest(@RequestBody String requestedUserName) throws ExceptionManager {//{"userName":"xxx"}
-        return friendServices.addToWaitingList(requestedUserName);
+        return friendServices.declineFriendResponse(requestedUserName);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/acceptFriend", method = RequestMethod.PUT)//sirve para cargarse amigos o solicitudes
+    @ResponseBody
+    public Response acceptFriend(@RequestBody String requestedUserName) throws ExceptionManager {//{"userName":"xxx"}
+        return friendServices.declineFriendResponse(requestedUserName);
     }
 
     @CrossOrigin

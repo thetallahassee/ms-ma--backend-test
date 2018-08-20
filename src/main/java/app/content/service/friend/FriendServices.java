@@ -16,6 +16,8 @@ import static app.StartApp.myApplication;
 
 @Service("friendServices")
 public class FriendServices {
+    User myUser = myApplication.getUserLoggedNow().getUserLogged();
+
     @Autowired
     UserServices userServices;
 
@@ -29,8 +31,28 @@ public class FriendServices {
 
     }
 
+    public Response declineFriendResponse(String userNameToDecline){
+        //User myUser = myApplication.getUserLoggedNow().getUserLogged();
+        Response response = null;
+        UserToFind userTemp = new Gson().fromJson(userNameToDecline, UserToFind.class);
+        boolean isInWaitList = loopListsFriend(userTemp.getUserName(),myUser.getWaitFriendsList());
+        boolean isInMyFriendsList = loopListsFriend(userTemp.getUserName(),myUser.getFriendsList());
+        User userReject = userServices.getUserFromListByUserName(userTemp.getUserName());
+        if(isInWaitList){
+            userReject.setRejections();
+            myUser.deleteWaitingFriend(userReject.getUserName());
+        }else if(isInMyFriendsList){
+            userReject.setRejections();
+            myUser.deleteFriend(userReject.getUserName());
+        }else{
+            response.setCode(400);
+            response.setMessage("User not found");
+        }
+        return response;
+    }
+
     public Response myFriendsList(){
-        User myUser = myApplication.getUserLoggedNow().getUserLogged();
+        //User myUser = myApplication.getUserLoggedNow().getUserLogged();
         Response response = new Response(200,"return friends list");
         Gson gson = new Gson();
         response.setContent(gson.toJson(myUser.getFriendsList()));
@@ -39,7 +61,7 @@ public class FriendServices {
     }
 
     public Response myWaitingList(){
-        User myUser = myApplication.getUserLoggedNow().getUserLogged();
+        //User myUser = myApplication.getUserLoggedNow().getUserLogged();
         Response response = new Response(200,"return waiting list");
         Gson gson = new Gson();
         response.setContent(gson.toJson(myUser.getWaitFriendsList()));
@@ -52,7 +74,7 @@ public class FriendServices {
         UserToFind userTemp = new Gson().fromJson(requestedUser, UserToFind.class);
 
         User userReq = userServices.getUserFromListByUserName(userTemp.getUserName());
-        User myUser = myApplication.getUserLoggedNow().getUserLogged();
+        //User myUser = myApplication.getUserLoggedNow().getUserLogged();
 
         if(myUser.isNobodyLovesYou()){
             response.setCode(450);
