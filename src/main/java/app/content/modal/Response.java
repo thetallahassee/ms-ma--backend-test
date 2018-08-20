@@ -3,6 +3,7 @@ package app.content.modal;
 public class Response {
     private int code;
     private String message;
+    private String content;
 
     public Response(int code, String message) {
         this.code = code;
@@ -23,5 +24,13 @@ public class Response {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

@@ -1,9 +1,13 @@
 package app.content.service.friend;
 
 import app.content.modal.Response;
+import app.content.modal.friendly.UserToFind;
 import app.content.modal.user.User;
 import app.content.service.user.UserServices;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,10 +29,29 @@ public class FriendServices {
 
     }
 
+    public Response myFriendsList(){
+        User myUser = myApplication.getUserLoggedNow().getUserLogged();
+        Response response = new Response(200,"return friends list");
+        Gson gson = new Gson();
+        response.setContent(gson.toJson(myUser.getFriendsList()));
+
+        return response;
+    }
+
+    public Response myWaitingList(){
+        User myUser = myApplication.getUserLoggedNow().getUserLogged();
+        Response response = new Response(200,"return waiting list");
+        Gson gson = new Gson();
+        response.setContent(gson.toJson(myUser.getWaitFriendsList()));
+
+        return response;
+    }
+
     public Response addToWaitingList(String requestedUser){
         Response response = null;
+        UserToFind userTemp = new Gson().fromJson(requestedUser, UserToFind.class);
 
-        User userReq = userServices.getUserFromListByUserName(requestedUser);
+        User userReq = userServices.getUserFromListByUserName(userTemp.getUserName());
         User myUser = myApplication.getUserLoggedNow().getUserLogged();
 
         if(myUser.isNobodyLovesYou()){

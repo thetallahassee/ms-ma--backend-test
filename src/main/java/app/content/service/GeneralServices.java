@@ -20,6 +20,7 @@ public class GeneralServices {
         return myApplication.isUserAndPasswd(user);
     }
 
+
     public User mappingUser(String jsonContent){
         System.out.println("MAPPING "+jsonContent);
         Gson gson = new Gson();
