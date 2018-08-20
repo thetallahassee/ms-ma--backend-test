@@ -23,8 +23,7 @@ public class LoginController {
     @CrossOrigin
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     @ResponseBody
-    public Response logOut(@RequestBody String userName) throws ExceptionManager {
-        loginServices.logOut();
-        return new Response(200, "logour correctly");
+    public Response logOut(@RequestBody String jsonUserName) throws ExceptionManager {//{username:"name"}
+        return loginServices.logOut(jsonUserName);
     }
 }
