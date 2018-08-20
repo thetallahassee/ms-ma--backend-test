@@ -77,12 +77,14 @@ public class UserServices {
         }
         return response;
     }
-    /*public User getUserFromListByUserName(String userName){
+    public User getUserFromListByUserName(String userNameReq){
+        User userReq = null;
         for(User user:myApplication.getUserList()){
-            if(user.getUserName().equals(userName)){
-
+            if(user.getUserName().equals(userNameReq)){
+                userReq = user;
             }
         }
-    }*/
+        return userReq;
+    }
 }
 

@@ -8,9 +8,9 @@ import java.util.List;
 
 public abstract class UserParams {
     private Visibility visibility;
-    private List<User> friendsList = new ArrayList<>();
-    private List<User> waitFriendsList = new ArrayList<>();
-    private List<User> rejectionFriendsList = new ArrayList<>();
+    private List<String> friendsList = new ArrayList<>();
+    private List<String> waitFriendsList = new ArrayList<>();
+    private List<String> rejectionFriendsList = new ArrayList<>();
     private int rejections = 0;
     private boolean nobodyLovesYou = false;
 
@@ -23,13 +23,17 @@ public abstract class UserParams {
     }
 
     public void addFriend(User userFriend){
-        this.friendsList.add(userFriend);
+        this.friendsList.add(userFriend.getUserName());
+        deleteWaitingFriend(userFriend.getUserName());
+    }
+    public void addWaitingFriend(User userFriend){
+        this.waitFriendsList.add(userFriend.getUserName());
         deleteWaitingFriend(userFriend.getUserName());
     }
 
     public void rejectFriend(User userFriend){
-        this.rejectionFriendsList.add(userFriend);
-        deleteWaitingFriend(userFriend.getUserName());
+        this.rejectionFriendsList.add(userFriend.getUserName());
+        //deleteWaitingFriend(userFriend.getUserName());
     }
 
     public void deleteWaitingFriend(String username){
@@ -54,5 +58,17 @@ public abstract class UserParams {
         if(this.rejections >= 3){
             this.nobodyLovesYou = true;
         }
+    }
+
+    public List<String> getFriendsList() {
+        return friendsList;
+    }
+
+    public List<String> getWaitFriendsList() {
+        return waitFriendsList;
+    }
+
+    public boolean isNobodyLovesYou() {
+        return nobodyLovesYou;
     }
 }

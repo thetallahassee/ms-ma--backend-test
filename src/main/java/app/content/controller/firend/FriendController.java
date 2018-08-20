@@ -10,8 +10,7 @@ public class FriendController {
     @CrossOrigin
     @RequestMapping(value = "/newFriendRequest", method = RequestMethod.POST)
     @ResponseBody
-    public Response resquestFriendShip(@RequestBody String objectFriendWait) throws ExceptionManager {
-        System.out.println("ENTRA A CREAR NEW USER "+objectFriendWait);
+    public Response resquestFriend(@RequestBody String requestedUser) throws ExceptionManager {
         //return userServices.createNewUserService(jsonUser);
         return new Response(000,"-");
     }

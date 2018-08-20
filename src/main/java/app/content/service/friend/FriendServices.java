@@ -1,11 +1,20 @@
 package app.content.service.friend;
 
+import app.content.modal.Response;
+import app.content.modal.user.User;
+import app.content.service.user.UserServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static app.StartApp.myApplication;
+
 @Service("friendServices")
 public class FriendServices {
+    @Autowired
+    UserServices userServices;
+
     public void returnFriendsWaitingFromUser(){
 
     }
@@ -16,11 +25,73 @@ public class FriendServices {
 
     }
 
+    public Response addToWaitingList(String requestedUser){
+        Response response = null;
+
+        User userReq = userServices.getUserFromListByUserName(requestedUser);
+        User myUser = myApplication.getUserLoggedNow().getUserLogged();
+
+        if(myUser.isNobodyLovesYou()){
+            response.setCode(450);
+            response.setMessage("NOBODY LOVES YOU");
+        }else{
+            response = checkIntoLists(myUser, userReq);
+        }
+        return response;
+    }
+
+    private Response checkIntoLists(User myUser, User userReq){
+        Response response = null;
+        boolean isFriend = loopListsFriend(myUser.getUserName(), userReq.getFriendsList());
+        boolean isWaiting = loopListsFriend(myUser.getUserName(), userReq.getWaitFriendsList());
+        if(!isFriend && !isWaiting){
+            userReq.addWaitingFriend(myUser);
+            response.setCode(200);
+            response.setMessage("Request sent");
+        }else if(isFriend){
+            response.setCode(400);
+            response.setMessage("You are now friends");
+        }else if(isWaiting){
+            response.setCode(400);
+            response.setMessage("You are waiting");
+        }
+        return response;
+    }
+
     public void addToFriendsList(){
 
     }
 
     public void addToRejectedList(){
 
+    }
+
+    /*private boolean myUserIsAFriend(String requestedUser){
+        boolean isFriend = false;
+        User myUser = myApplication.getUserLoggedNow().getUserLogged();
+        User userReq = userServices.getUserFromListByUserName(requestedUser);
+
+        for(String userName : userReq.getFriendsList()){
+            if(userName.equals(myUser.getUserName())){
+                isFriend = true;
+                break;
+            }
+        }
+        return isFriend;
+    }
+
+    private boolean myUserIsWaiting(String requestedUser){
+
+    }*/
+
+    private boolean loopListsFriend(String userToFind, List<String>list){
+        boolean coincidence = false;
+        for(String userName : list){
+            if(userName.equals(userToFind)){
+                coincidence = true;
+                break;
+            }
+        }
+        return coincidence;
     }
 }
