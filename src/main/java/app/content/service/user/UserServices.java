@@ -32,7 +32,7 @@ public class UserServices {
                         generalServices.patternOnlyLetterAndNumber(user.getPassword())){
                     if(userNameIsUnique(user.getUserName())){
                         user.setRegisterDate(new Date());
-                        user.setVisibility(visibilityServices.getVisibilityTypeFromCode("001"));
+                        user.setVisibility(visibilityServices.getVisibilityTypeFromCode("002"));
 
                         Map<String,List<String>> listFriends = myApplication.getFriendsLists();
                         listFriends.put(user.getUserName(), new ArrayList<>());

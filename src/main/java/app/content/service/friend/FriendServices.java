@@ -151,8 +151,11 @@ public class FriendServices {
             User myUser = myApplication.getUserLoggedNow().getUserLogged();
             System.out.println("MY USER STATE "+myUser.getRejections());
             System.out.println("MY USER STATE NOBODY"+myUser.isNobodyLovesYou());
-            if(myUser.isNobodyLovesYou()){
-                response.setCode(450);
+            if(!userReq.getVisibility().isVisible()){
+                response.setCode(400);
+                response.setMessage("This profile is Hidden");
+            }else if(myUser.isNobodyLovesYou()){
+                response.setCode(400);
                 response.setMessage("NOBODY LOVES YOU");
             }else{
                 response = checkIntoLists(myUser, userReq);
