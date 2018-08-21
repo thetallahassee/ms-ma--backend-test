@@ -51,6 +51,13 @@ public class MyApplication {
         this.friendsLists.put(userLogged, list);
         //Remove from waiting
         removeElementFromWaitingList(userLogged, userToAdd);
+
+        List<String> list2 = this.friendsLists.get(userToAdd);
+        list2.add(userLogged);
+        this.friendsLists.put(userToAdd, list2);
+        //Remove from waiting
+        //removeElementFromWaitingList(userToAdd, userLogged);
+
     }
 
     private void removeElementFromWaitingList(String userToFind,String userDelete){
@@ -61,7 +68,6 @@ public class MyApplication {
     public void deleteElementFriendFromList(List<String> list, String userDelete){
         System.out.println("DELETE ELEMENT");
         Iterator itr = list.iterator();
-
         while (itr.hasNext()){
             String x = (String)itr.next();
             if(x.equals(userDelete)){
@@ -74,6 +80,10 @@ public class MyApplication {
         List<String> list = this.waitingLists.get(userToFind);
         list.add(userLogged);
         this.waitingLists.put(userToFind, list);
+
+        /*List<String> list2 = this.waitingLists.get(userToFind);
+        list2.add(userLogged);
+        this.waitingLists.put(userToFind, list);*/
     }
 
     public List<Visibility> getVisibilityList() {

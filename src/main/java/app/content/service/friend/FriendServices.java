@@ -74,13 +74,17 @@ public class FriendServices {
                 userReject.setRejections();
                 //myUser.deleteWaitingFriend(userReject.getUserName());
                 List<String>myWaitingFriends = myApplication.getWaitingLists().get(myUser.getUserName());
+                List<String>myWaitingFriends2 = myApplication.getWaitingLists().get(userReject.getUserName());
                 myApplication.deleteElementFriendFromList(myWaitingFriends, userReject.getUserName());
+                myApplication.deleteElementFriendFromList(myWaitingFriends2, myUser.getUserName());
                 response.setCode(200);
                 response.setMessage("Declined friend: "+userReject.getUserName());
             }else if(isFriend){
                 userReject.setRejections();
                 List<String>myFriends = myApplication.getWaitingLists().get(myUser.getUserName());
+                List<String>myFriends2 = myApplication.getWaitingLists().get(userReject.getUserName());
                 myApplication.deleteElementFriendFromList(myFriends, userReject.getUserName());
+                myApplication.deleteElementFriendFromList(myFriends2, myUser.getUserName());
                 //myUser.deleteFriend(userReject.getUserName());
                 response.setCode(200);
                 response.setMessage("Deleted friend: "+userReject.getUserName());
