@@ -1,4 +1,4 @@
-package app.content.service;
+package app.content.service.visibility;
 
 import app.content.modal.Visibility;
 import org.springframework.stereotype.Service;

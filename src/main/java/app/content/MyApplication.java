@@ -5,13 +5,15 @@ import app.content.modal.friendly.State;
 import app.content.modal.login.Login;
 import app.content.modal.user.User;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class MyApplication {
     private List<User> userList;
     public List<Visibility> visibilityList;
     private List<State>friendStatesOptions;
+
+    private Map<String,List<String>> waitingLists;
+    private Map<String,List<String>> friendsLists;
 
     private Login userLoggedNow;
 
@@ -28,7 +30,47 @@ public class MyApplication {
         initDefaultOptionsVisibility();
         initDefaultOptionsState();
         this.setUserLoggedNow(null);
+        this.waitingLists = new HashMap<>();
+        this.friendsLists = new HashMap<>();
         //initLoginList();
+    }
+
+    public Map<String, List<String>> getWaitingLists() {
+        return waitingLists;
+    }
+
+    public Map<String, List<String>> getFriendsLists() {
+        return friendsLists;
+    }
+
+    public void addIntoFriendList(String userLogged, String userToFind){
+        List<String> list = this.friendsLists.get(userToFind);
+        list.add(userLogged);
+        this.friendsLists.put(userToFind, list);
+        //Remove from waiting
+        removeElementFromWaitingList(userToFind, userLogged);
+    }
+
+    private void removeElementFromWaitingList(String userToFind,String userDelete){
+        List<String> list = this.waitingLists.get(userToFind);
+        deleteWaitingFriend(list, userDelete);
+    }
+
+    public void deleteWaitingFriend(List<String> list, String userDelete){ ;
+        Iterator itr = list.iterator();
+
+        while (itr.hasNext()){
+            User x = (User)itr.next();
+            if(x.getUserName().equals(userDelete)){
+                itr.remove();
+            }
+        }
+    }
+
+    public void addIntoWaitingFriendList(String userLogged, String userToFind){
+        List<String> list = this.waitingLists.get(userToFind);
+        list.add(userLogged);
+        this.waitingLists.put(userToFind, list);
     }
 
     public List<Visibility> getVisibilityList() {

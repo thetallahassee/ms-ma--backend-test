@@ -15,7 +15,7 @@ import java.util.List;
 
 class Test1 {
     List<Response> errorList = new ArrayList<>();
-    Response response;
+    Response response = new Response(600, "empty");
     Gson gson = new Gson();
     List<User> userList = new ArrayList<>();
     User userToLog;
@@ -52,11 +52,227 @@ class Test1 {
         login();
         errorsListPrint();
     }
+    @Test
+    void testLoginUser2(){
+        loginWithUser("user2", passwdGen);
+        errorsListPrint();
+    }
+    @Test
+    void testLoginUser3(){
+        loginWithUser("user3", passwdGen);
+        errorsListPrint();
+    }
+    @Test
+    void testLoginUser4(){
+        loginWithUser("user4", passwdGen);
+        errorsListPrint();
+    }
 
     @Test
     void testLogOut(){
         logOut();
         errorsListPrint();
+    }
+
+    @Test
+    void testLogOutUser2(){
+        logOutWithUser("user2");
+    }
+
+    @Test
+    void testLogOutUser3(){
+        logOutWithUser("user3");
+    }
+    @Test
+    void testLogOutUser4(){
+        logOutWithUser("user4");
+    }
+
+    @Test
+    void testMyWaitingList(){
+        myWaitingFriendsList();
+    }
+
+    @Test
+    void testMyFriends(){
+        myFriendsList();
+    }
+
+    @Test
+    void user1NewFriendRequest(){
+        friendRequest("user1");
+    }
+
+    @Test
+    void user2NewFriendRequest(){
+        friendRequest("user2");
+    }
+
+    @Test
+    void user3NewFriendRequest(){
+        friendRequest("user3");
+    }
+
+    @Test
+    void user4NewFriendRequest(){
+        friendRequest("user4");
+    }
+
+    @Test
+    void user1DeclineRequest(){
+        declineRequest("user1");
+    }
+    @Test
+    void user2DeclineRequest(){
+        declineRequest("user2");
+    }
+    @Test
+    void user3DeclineRequest(){
+        declineRequest("user3");
+    }
+    @Test
+    void user4DeclineRequest(){
+        declineRequest("user4");
+    }
+
+    @Test
+    void user1AcceptFriend(){
+        acceptFriend("user1");
+    }
+    @Test
+    void user2AcceptFriend(){
+        acceptFriend("user2");
+    }
+    @Test
+    void user3AcceptFriend(){
+        acceptFriend("user3");
+    }
+    @Test
+    void user4AcceptFriend(){
+        acceptFriend("user4");
+    }
+
+    void acceptFriend(String username){
+        String path = "http://localhost:8080/friend/acceptFriend";
+        try{
+            UserToFind userToFind = new UserToFind(username);
+            String paramSend = gson.toJson(userToFind);
+            response = sendPost(paramSend, path);
+            if(response.getCode()==200){
+                System.out.println("OK: "+response.getMessage());
+            }else{
+                errorList.add(response);
+                System.err.println("BAD: "+response.getMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setCode(410);
+            response.setMessage(e.getMessage());
+            errorList.add(response);
+        }
+    }
+
+
+    void declineRequest(String username){
+        String path = "http://localhost:8080/friend/declineRquest";
+        try{
+            UserToFind userToFind = new UserToFind(username);
+            String paramSend = gson.toJson(userToFind);
+            response = sendPost(paramSend, path);
+            if(response.getCode()==200){
+                System.out.println("OK: "+response.getMessage());
+            }else{
+                errorList.add(response);
+                System.err.println("BAD: "+response.getMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setCode(410);
+            response.setMessage(e.getMessage());
+            errorList.add(response);
+        }
+    }
+
+
+    void friendRequest(String username){
+        String path = "http://localhost:8080/friend/newFriendRequest";
+        try{
+            UserToFind userToFind = new UserToFind(username);
+            String paramSend = gson.toJson(userToFind);
+            response = sendPost(paramSend, path);
+            if(response.getCode()==200){
+                System.out.println("OK: "+response.getMessage());
+            }else{
+                errorList.add(response);
+                System.err.println("BAD: "+response.getMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setCode(410);
+            response.setMessage(e.getMessage());
+            errorList.add(response);
+        }
+    }
+
+    private void myFriendsList() {
+        String path = "http://localhost:8080/friend/myFriendsList";
+        try {
+            response = sendGet(path);
+            if(response.getCode()==200){
+                System.out.println("OK: "+response.getMessage());
+                System.out.println("CONTENT: "+response.getContent());
+            }else{
+                errorList.add(response);
+                System.err.println("BAD: "+response.getMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setCode(410);
+            response.setMessage(e.getMessage());
+            errorList.add(response);
+        }
+    }
+
+
+    void myWaitingFriendsList(){
+        String path = "http://localhost:8080/friend/myWaitingList";
+        try {
+            response = sendGet(path);
+            if(response.getCode()==200){
+                System.out.println("OK: "+response.getMessage());
+                System.out.println("CONTENT: "+response.getContent());
+            }else{
+                errorList.add(response);
+                System.err.println("BAD: "+response.getMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setCode(410);
+            response.setMessage(e.getMessage());
+            errorList.add(response);
+        }
+    }
+
+
+
+    void loginWithUser(String userName, String passwd){
+
+        String path = "http://localhost:8080/auth/login";
+        try {
+            String userToLogin = gson.toJson(new User(userName,passwd));
+            response = sendPost(userToLogin, path);
+            if(response.getCode()==200){
+                System.out.println("OK: "+response.getMessage());
+            }else{
+                errorList.add(response);
+                System.err.println("BAD: "+response.getMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setCode(410);
+            response.setMessage(e.getMessage());
+            errorList.add(response);
+        }
     }
 
     void login(){
@@ -84,7 +300,27 @@ class Test1 {
         //String userToLogOut = gson.toJson(userToLog);
         String path = "http://localhost:8080/auth/logout";
         try {
-            String userToLogOut = gson.toJson(new UserToFind(nameGen));
+            String userToLogOut = gson.toJson(new UserToFind("user1"));
+            response = sendPost(userToLogOut, path);
+            if(response.getCode()==200){
+                System.out.println("OK: "+response.getMessage());
+                userToLog = null;
+            }else{
+                errorList.add(response);
+                System.err.println("BAD: "+response.getMessage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setCode(410);
+            response.setMessage(e.getMessage());
+            errorList.add(response);
+        }
+    }
+
+    private void logOutWithUser(String userName) {
+        String path = "http://localhost:8080/auth/logout";
+        try {
+            String userToLogOut = gson.toJson(new UserToFind(userName));
             response = sendPost(userToLogOut, path);
             if(response.getCode()==200){
                 System.out.println("OK: "+response.getMessage());
@@ -133,13 +369,13 @@ class Test1 {
     }
 
     private void insertFourUsers(){
-        for(int i=0; i<5; i++){
+        for(int i=2; i<5; i++){
             Response resp = null;
             String path = "http://localhost:8080/user/new";
 
             int random = (int)(Math.random()*100);
             try {
-                User user = new User("user"+random,"abc");
+                User user = new User("user"+i,"abc");
                 String userSenParam = gson.toJson(user);
                 resp = sendPost(userSenParam, path);
                 if(resp.getCode()==200){
@@ -174,12 +410,6 @@ class Test1 {
     }
 
     private Response sendPost(String jsonParams, String path) throws Exception{
-        //User user = new User("prueba", "1234");
-        //Gson gson = new Gson();
-
-        //String query = "http://localhost:8080/user/new";
-        //String json = "{\"userName\":\"hola\", \"password\":\"1234\"}";
-
         URL url = new URL(path);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setConnectTimeout(5000);
@@ -203,33 +433,36 @@ class Test1 {
             //System.out.println("RECORRE RESPUESTA "+inputLine);
             response.append(inputLine);
         }
-        //System.out.println("RESPONSE MONTADA "+response);
         in.close();
         return gson.fromJson(String.valueOf(response), Response.class);
+    }
 
-        /*StringBuilder result = new StringBuilder();
-        URL url = new URL("http://localhost:8080/user/new");
+    private String sendPut(String urlToRead) throws Exception{
+        StringBuilder result = new StringBuilder();
+        URL url = new URL(urlToRead);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("POST");
-        String urlParameters = "{\"userName\":\"prueba\",\"password\":\"hola\"}";
-        // Send post request
-        conn.setDoOutput(true);
-        DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
-        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(wr, "UTF-8"));
-        writer.write(urlParameters);
-        writer.close();
-        wr.close();
-
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(conn.getInputStream()));
-        String inputLine;
-        StringBuffer response = new StringBuffer();
-
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
+        conn.setRequestMethod("PUT");
+        BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String line;
+        while ((line = rd.readLine()) != null) {
+            result.append(line);
         }
-        in.close();
-        return result.toString();*/
-        //return "HOLIS";
+        rd.close();
+        return result.toString();
+    }
+
+    private Response sendGet(String urlToRead) throws Exception{
+        StringBuilder result = new StringBuilder();
+        URL url = new URL(urlToRead);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String line;
+        StringBuffer response = new StringBuffer();
+        while ((line = rd.readLine()) != null) {
+            response.append(line);
+        }
+        rd.close();
+        return gson.fromJson(String.valueOf(response), Response.class);
     }
 }

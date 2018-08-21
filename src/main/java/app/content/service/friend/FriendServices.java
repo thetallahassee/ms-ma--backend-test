@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static app.StartApp.myApplication;
@@ -17,7 +18,7 @@ import static app.StartApp.myApplication;
 @Service("friendServices")
 public class FriendServices {
     //User myUser = myApplication.getUserLoggedNow().getUserLogged();
-
+    Response response = new Response(600, "empty");
     @Autowired
     UserServices userServices;
 
@@ -32,85 +33,131 @@ public class FriendServices {
     }
 
     public Response acceptNewFriend(String userNameToAdd){
-        Response response = null;
-        User myUser = myApplication.getUserLoggedNow().getUserLogged();
-        UserToFind userTemp = new Gson().fromJson(userNameToAdd, UserToFind.class);
-        boolean isInWaitList = loopListsFriend(userTemp.getUserName(),myUser.getWaitFriendsList());
-        boolean isInMyFriendsList = loopListsFriend(userTemp.getUserName(),myUser.getFriendsList());
-        User userReject = userServices.getUserFromListByUserName(userTemp.getUserName());
-        if(isInWaitList){
-            myUser.addFriend(userReject.getUserName());
-        }else if(isInMyFriendsList){
+        //Response response = null;
+        try{
+            User myUser = myApplication.getUserLoggedNow().getUserLogged();
+            UserToFind userTemp = new Gson().fromJson(userNameToAdd, UserToFind.class);
+            boolean isInWaitList = loopListsFriend(userTemp.getUserName(),myUser.getWaitFriendsList());
+            boolean isInMyFriendsList = loopListsFriend(userTemp.getUserName(),myUser.getFriendsList());
+            User userReject = userServices.getUserFromListByUserName(userTemp.getUserName());
+            if(isInWaitList){
+                myUser.addFriend(userReject.getUserName());
+            }else if(isInMyFriendsList){
+                response.setCode(400);
+                response.setMessage("this user is already your friend");
+            }else{
+                response.setCode(400);
+                response.setMessage("User not found");
+            }
+        }catch (Exception e){
             response.setCode(400);
-            response.setMessage("this user is already your friend");
-        }else{
-            response.setCode(400);
-            response.setMessage("User not found");
+            response.setMessage(e.getMessage());
         }
-
         return response;
     }
 
     public Response declineFriendResponse(String userNameToDecline){
-        User myUser = myApplication.getUserLoggedNow().getUserLogged();
-        Response response = null;
-        UserToFind userTemp = new Gson().fromJson(userNameToDecline, UserToFind.class);
-        boolean isInWaitList = loopListsFriend(userTemp.getUserName(),myUser.getWaitFriendsList());
-        boolean isInMyFriendsList = loopListsFriend(userTemp.getUserName(),myUser.getFriendsList());
-        User userReject = userServices.getUserFromListByUserName(userTemp.getUserName());
-        if(isInWaitList){
-            userReject.setRejections();
-            myUser.deleteWaitingFriend(userReject.getUserName());
-        }else if(isInMyFriendsList){
-            userReject.setRejections();
-            myUser.deleteFriend(userReject.getUserName());
-        }else{
+        try{
+            User myUser = myApplication.getUserLoggedNow().getUserLogged();
+            //Response response = null;
+            UserToFind userTemp = new Gson().fromJson(userNameToDecline, UserToFind.class);
+            boolean isInWaitList = loopListsFriend(userTemp.getUserName(),myUser.getWaitFriendsList());
+            boolean isInMyFriendsList = loopListsFriend(userTemp.getUserName(),myUser.getFriendsList());
+            User userReject = userServices.getUserFromListByUserName(userTemp.getUserName());
+            if(isInWaitList){
+                userReject.setRejections();
+                myUser.deleteWaitingFriend(userReject.getUserName());
+            }else if(isInMyFriendsList){
+                userReject.setRejections();
+                myUser.deleteFriend(userReject.getUserName());
+            }else{
+                response.setCode(400);
+                response.setMessage("User not found");
+            }
+        }catch (Exception e){
             response.setCode(400);
-            response.setMessage("User not found");
+            response.setMessage(e.getMessage());
         }
+
         return response;
     }
 
     public Response myFriendsList(){
-        User myUser = myApplication.getUserLoggedNow().getUserLogged();
-        Response response = new Response(200,"return friends list");
-        Gson gson = new Gson();
-        response.setContent(gson.toJson(myUser.getFriendsList()));
-
-        return response;
-    }
-
-    public Response myWaitingList(){
-        User myUser = myApplication.getUserLoggedNow().getUserLogged();
-        Response response = new Response(200,"return waiting list");
-        Gson gson = new Gson();
-        response.setContent(gson.toJson(myUser.getWaitFriendsList()));
-
-        return response;
-    }
-
-    public Response addToWaitingList(String requestedUser){
-        Response response = null;
-        UserToFind userTemp = new Gson().fromJson(requestedUser, UserToFind.class);
-
-        User userReq = userServices.getUserFromListByUserName(userTemp.getUserName());
-        User myUser = myApplication.getUserLoggedNow().getUserLogged();
-
-        if(myUser.isNobodyLovesYou()){
-            response.setCode(450);
-            response.setMessage("NOBODY LOVES YOU");
-        }else{
-            response = checkIntoLists(myUser, userReq);
+        //Response response = null;
+        try {
+            User myUser = myApplication.getUserLoggedNow().getUserLogged();
+            response.setCode(200);
+            response.setMessage("return waiting list");
+            Gson gson = new Gson();
+            response.setContent(gson.toJson(myUser.getFriendsList()));
+        }catch (Exception e){
+            response.setCode(400);
+            response.setMessage(e.getMessage());
         }
         return response;
     }
 
+    public Response myWaitingList(){
+        //Response response = null;
+        try {
+            User myUser = myApplication.getUserLoggedNow().getUserLogged();
+
+            Gson gson = new Gson();
+            System.out.println("MY USER NAME "+myUser.getUserName());
+            //System.out.println("LISTA DE ESPERA "+myUser.getWaitFriendsList());
+
+            List<String>myWaitingList = myApplication.getWaitingLists().get(myUser.getUserName());
+
+            response.setCode(200);
+            response.setMessage("return waiting list");
+            response.setContent(gson.toJson(myWaitingList));
+        }catch (Exception e){
+            response.setCode(400);
+            response.setMessage(e.getMessage());
+        }
+        return response;
+    }
+
+    public Response addToWaitingList(String requestedUser){
+        //Response response = null;
+        try{
+            UserToFind userTemp = new Gson().fromJson(requestedUser, UserToFind.class);
+            User userReq = userServices.getUserFromListByUserName(userTemp.getUserName());
+            User myUser = myApplication.getUserLoggedNow().getUserLogged();
+
+            if(myUser.isNobodyLovesYou()){
+                response.setCode(450);
+                response.setMessage("NOBODY LOVES YOU");
+            }else{
+                response = checkIntoLists(myUser, userReq);
+            }
+        }catch (Exception e){
+            response.setCode(400);
+            response.setMessage(e.getMessage());
+        }
+
+        return response;
+    }
+
     private Response checkIntoLists(User myUser, User userReq){
-        Response response = null;
-        boolean isFriend = loopListsFriend(myUser.getUserName(), userReq.getFriendsList());
-        boolean isWaiting = loopListsFriend(myUser.getUserName(), userReq.getWaitFriendsList());
+        //Response response = null;
+        System.out.println("CHECK INTO LISTS");
+        /*if(userReq.getFriendsList() == null){
+            System.out.println("INIT LIST");
+            userReq.setFriendsList(new ArrayList<>());
+        }
+        if(userReq.getWaitFriendsList() == null){
+            System.out.println("INIT LIST");
+            userReq.setWaitFriendsList(new ArrayList<>());
+        }*/
+        //boolean isFriend = loopListsFriend(myUser.getUserName(), userReq.getFriendsList());
+        //boolean isWaiting = loopListsFriend(myUser.getUserName(), userReq.getWaitFriendsList());
+        boolean isFriend = checkIsFriend(myUser.getUserName(),userReq.getUserName());
+        boolean isWaiting = checkIsWaiting(myUser.getUserName(),userReq.getUserName());
+        System.out.println("CHECKED");
         if(!isFriend && !isWaiting){
-            userReq.addWaitingFriend(myUser);
+            //userReq.addWaitingFriend(myUser.getUserName());
+            myApplication.addIntoWaitingFriendList(myUser.getUserName(), userReq.getUserName());
             response.setCode(200);
             response.setMessage("Request sent");
         }else if(isFriend){
@@ -148,6 +195,16 @@ public class FriendServices {
     private boolean myUserIsWaiting(String requestedUser){
 
     }*/
+
+    private boolean checkIsFriend(String userLogged, String userToFind){
+        List<String>listFr = myApplication.getFriendsLists().get(userLogged);
+        return loopListsFriend(userToFind, listFr);
+    }
+    private boolean checkIsWaiting(String userLogged, String userToFind){
+        List<String>listWait = myApplication.getWaitingLists().get(userLogged);
+        return loopListsFriend(userToFind, listWait);
+
+    }
 
     private boolean loopListsFriend(String userToFind, List<String>list){
         boolean coincidence = false;

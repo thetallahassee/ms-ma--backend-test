@@ -23,13 +23,13 @@ public class LoginServices {
         String message;
         User user = generalServices.mappingUser(jsonUserParams);
 
-        if(myApplication.getUserLoggedNow() == null){
+        if(myApplication.getUserLoggedNow() == null && myApplication.userExists(user.getUserName())){
             loginToApp(user);
             code = 200;
             message = "User logged OK "+myApplication.getUserLoggedNow().getUserLogged().getUserName();
         }else{
             code = 400;
-            message = "Another user is logged";
+            message = "Another user is logged or not exist";
         }
         return new Response(code,message);
     }
@@ -58,7 +58,7 @@ public class LoginServices {
             if(myUser.getUserName().equals(userTemp.getUserName())){
                 myApplication.setUserLoggedNow(null);
                 response.setCode(200);
-                response.setMessage("LogOut OK");
+                response.setMessage("LogOut OK "+myUser.getUserName());
             }else{
                 response.setCode(400);
                 response.setMessage("This user not logged");

@@ -1,14 +1,13 @@
 package app.content.service.user;
 
 import app.content.modal.Response;
-import app.content.modal.Visibility;
 import app.content.modal.user.User;
 import app.content.service.GeneralServices;
-import app.content.service.VisibilityServices;
+import app.content.service.visibility.VisibilityServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.util.*;
 
 import static app.StartApp.myApplication;
 
@@ -28,6 +27,14 @@ public class UserServices {
                     if(userNameIsUnique(user.getUserName())){
                         user.setRegisterDate(new Date());
                         user.setVisibility(visibilityServices.getVisibilityTypeFromCode("001"));
+
+                        Map<String,List<String>> listFriends = myApplication.getFriendsLists();
+                        listFriends.put(user.getUserName(), new ArrayList<>());
+
+                        Map<String,List<String>> listsWaiting = myApplication.getWaitingLists();
+                        listsWaiting.put(user.getUserName(), new ArrayList<>());
+                        /*user.setWaitFriendsList(new ArrayList<>());
+                        user.setFriendsList(new ArrayList<>());*/
                         myApplication.addUserInUserList(user);
                         code = 200;
                         message = "User"+user.getUserName()+" created OK";

@@ -1,8 +1,6 @@
 package app.content.modal;
 
 import app.content.modal.user.User;
-import app.content.service.VisibilityServices;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -29,12 +27,30 @@ public abstract class UserParams {
     }
 
     public void addFriend(String userFriend){
+        /*if(this.friendsList.size()==0){
+            this.friendsList = new ArrayList<>();
+        }*/
         this.friendsList.add(userFriend);
         deleteWaitingFriend(userFriend);
     }
-    public void addWaitingFriend(User userFriend){
-        this.waitFriendsList.add(userFriend.getUserName());
-        deleteWaitingFriend(userFriend.getUserName());
+    public void addWaitingFriend(String userFriend){
+        System.out.println("ENTRA EN ADD WAITING FRIEND");
+        /*if(this.waitFriendsList.size()==0){
+            this.waitFriendsList = new ArrayList<>();
+        }*/
+
+        this.waitFriendsList.add(userFriend);
+        System.out.println("LISTADO "+ this.waitFriendsList);
+
+        //deleteWaitingFriend(userFriend);
+    }
+
+    public void setFriendsList(List<String> friendsList) {
+        this.friendsList = friendsList;
+    }
+
+    public void setWaitFriendsList(List<String> waitFriendsList) {
+        this.waitFriendsList = waitFriendsList;
     }
 
     /*public void rejectFriend(User userFriend){
@@ -42,7 +58,7 @@ public abstract class UserParams {
         //deleteWaitingFriend(userFriend.getUserName());
     }*/
 
-    public void deleteWaitingFriend(String username){
+    public void deleteWaitingFriend(String username){ ;
         Iterator itr = this.waitFriendsList.iterator();
 
         while (itr.hasNext()){

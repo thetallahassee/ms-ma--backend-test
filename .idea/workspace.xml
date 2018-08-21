@@ -3,28 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="1211b41e-38ac-4940-873e-60799a47cf78" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/StartApp.java" afterPath="$PROJECT_DIR$/src/main/java/app/StartApp.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/content/MyApplication.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/MyApplication.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/content/service/VisibilityServices.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/service/VisibilityServices.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/content/service/VisibilityServices.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/service/visibility/VisibilityServices.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/content/service/login/LoginServices.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/service/login/LoginServices.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/content/service/user/UserServices.java" afterPath="$PROJECT_DIR$/src/main/java/app/content/service/user/UserServices.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test1.java" afterPath="$PROJECT_DIR$/src/test/java/Test1.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/MyApplication.class" afterPath="$PROJECT_DIR$/target/classes/app/content/MyApplication.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/controller/VisibilityController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/controller/firend/Friend.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/controller/login/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/app/content/controller/login/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/controller/user/UserController.class" afterPath="$PROJECT_DIR$/target/classes/app/content/controller/user/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/domain/Response.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/domain/Staff.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/domain/UserParams.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/domain/Visibility.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/domain/login/Login.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/domain/user/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/service/GeneralServices.class" afterPath="$PROJECT_DIR$/target/classes/app/content/service/GeneralServices.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/service/login/LoginServices.class" afterPath="$PROJECT_DIR$/target/classes/app/content/service/login/LoginServices.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/content/service/user/UserServices.class" afterPath="$PROJECT_DIR$/target/classes/app/content/service/user/UserServices.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Test1.class" afterPath="$PROJECT_DIR$/target/test-classes/Test1.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/content/service/VisibilityServices.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,26 +24,161 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Test1.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Test1.java">
+      <file leaf-file-name="LoginServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/login/LoginServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="51" column="16" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="248">
+              <caret line="31" column="58" lean-forward="false" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#insertFourUsers#0;class#Test1#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginServices.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/login/LoginServices.java">
+      <file leaf-file-name="StartApp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/StartApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="67" column="46" lean-forward="false" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
+            <state relative-caret-position="225">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Test1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="91" column="24" lean-forward="false" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#testLogin#0;class#Test1#0" expanded="false" />
+                <element signature="method#testLoginUser2#0;class#Test1#0" expanded="false" />
+                <element signature="method#testLoginUser3#0;class#Test1#0" expanded="false" />
+                <element signature="method#testLoginUser4#0;class#Test1#0" expanded="false" />
+                <element signature="method#testLogOut#0;class#Test1#0" expanded="false" />
+                <element signature="e#1602#1603#0" expanded="true" />
+                <element signature="e#1641#1642#0" expanded="true" />
+                <element signature="e#1680#1681#0" expanded="true" />
+                <element signature="e#1719#1720#0" expanded="true" />
+                <element signature="e#1757#1758#0" expanded="true" />
+                <element signature="e#1796#1797#0" expanded="true" />
+                <element signature="e#1837#1838#0" expanded="true" />
+                <element signature="e#1875#1876#0" expanded="true" />
+                <element signature="e#1912#1913#0" expanded="true" />
+                <element signature="e#1943#1944#0" expanded="true" />
+                <element signature="e#1988#1989#0" expanded="true" />
+                <element signature="e#2026#2027#0" expanded="true" />
+                <element signature="e#2071#2072#0" expanded="true" />
+                <element signature="e#2109#2110#0" expanded="true" />
+                <element signature="e#2154#2155#0" expanded="true" />
+                <element signature="e#2192#2193#0" expanded="true" />
+                <element signature="e#2237#2238#0" expanded="true" />
+                <element signature="e#2275#2276#0" expanded="true" />
+                <element signature="e#2318#2319#0" expanded="true" />
+                <element signature="e#2357#2358#0" expanded="true" />
+                <element signature="e#2399#2400#0" expanded="true" />
+                <element signature="e#2438#2439#0" expanded="true" />
+                <element signature="e#2480#2481#0" expanded="true" />
+                <element signature="e#2519#2520#0" expanded="true" />
+                <element signature="e#2561#2562#0" expanded="true" />
+                <element signature="e#2600#2601#0" expanded="true" />
+                <element signature="e#2641#2642#0" expanded="true" />
+                <element signature="e#2678#2679#0" expanded="true" />
+                <element signature="e#2718#2719#0" expanded="true" />
+                <element signature="e#2755#2756#0" expanded="true" />
+                <element signature="e#2795#2796#0" expanded="true" />
+                <element signature="e#2832#2833#0" expanded="true" />
+                <element signature="e#2872#2873#0" expanded="true" />
+                <element signature="e#2909#2910#0" expanded="true" />
+                <element signature="method#acceptFriend#0;class#Test1#0" expanded="false" />
+                <element signature="method#declineRequest#0;class#Test1#0" expanded="false" />
+                <element signature="method#insertUser#0;class#Test1#0" expanded="false" />
+                <element signature="method#sendPut#0;class#Test1#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserParams.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="60" column="4" lean-forward="true" selection-start-line="60" selection-start-column="4" selection-end-line="69" selection-end-column="5" />
+              <folding>
+                <element signature="e#641#642#0" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+                <element signature="e#1368#1369#0" expanded="true" />
+                <element signature="e#1414#1415#0" expanded="true" />
+                <element signature="e#1482#1483#0" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
+                <element signature="e#2727#2728#0" expanded="true" />
+                <element signature="e#2761#2762#0" expanded="true" />
+                <element signature="e#2809#2810#0" expanded="true" />
+                <element signature="e#2847#2848#0" expanded="true" />
+                <element signature="e#2888#2889#0" expanded="true" />
+                <element signature="e#2925#2926#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/user/UserServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+              <folding>
+                <element signature="method#userNameIsUnique#0;class#UserServices#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyApplication.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/content/MyApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="65" column="13" lean-forward="true" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+              <folding>
+                <element signature="e#1019#1020#0" expanded="true" />
+                <element signature="e#1054#1055#0" expanded="true" />
+                <element signature="e#1112#1113#0" expanded="true" />
+                <element signature="e#1147#1148#0" expanded="true" />
+                <element signature="e#2243#2244#0" expanded="true" />
+                <element signature="e#2280#2281#0" expanded="true" />
+                <element signature="e#2326#2327#0" expanded="true" />
+                <element signature="e#2381#2382#0" expanded="true" />
+                <element signature="method#isUserAndPasswd#0;class#MyApplication#0" expanded="false" />
+                <element signature="method#addUserInUserList#0;class#MyApplication#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FriendController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FriendServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="112" column="59" lean-forward="false" selection-start-line="112" selection-start-column="59" selection-end-line="112" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#acceptNewFriend#0;class#FriendServices#0" expanded="false" />
+                <element signature="method#declineFriendResponse#0;class#FriendServices#0" expanded="false" />
+                <element signature="method#myFriendsList#0;class#FriendServices#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,6 +201,8 @@
       <find>justAnExample</find>
       <find>myUser</find>
       <find>initDefaultOptionsVisibility</find>
+      <find>userTemp</find>
+      <find>checkIntoLists</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -107,7 +232,6 @@
         <option value="$PROJECT_DIR$/src/main/java/app/content/domain/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/ExceptionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/domain/user/UserParams.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/StartApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/domain/SystemParams.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/controller/VisibilityController.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/domain/Visibility.java" />
@@ -126,15 +250,17 @@
         <option value="$PROJECT_DIR$/src/main/java/app/content/modal/Response.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/service/GeneralServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/modal/friendly/UserToFind.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/controller/login/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/service/VisibilityServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/content/MyApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/content/service/user/UserServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/content/service/visibility/VisibilityServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/StartApp.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test1.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/content/service/login/LoginServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/content/service/user/UserServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/content/MyApplication.java" />
       </list>
     </option>
   </component>
@@ -263,39 +389,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="modal" type="462c0819:PsiDirectoryNode" />
-              <item name="friendly" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ms-ma--backend-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ms-ma--backend-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="modal" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ms-ma--backend-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ms-ma--backend-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="modal" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ms-ma--backend-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ms-ma--backend-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -376,32 +469,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Test1.testLogin">
+  <component name="RunManager" selected="JUnit.Test1.testMyWaitingList">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
-    </configuration>
-    <configuration name="StartApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="app.StartApp" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ms-ma--backend-test" />
-      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -417,14 +491,14 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="Test1.testInsertFourUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test1.testLogOutUser3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="ms-ma--backend-test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Test1" />
-      <option name="METHOD_NAME" value="testInsertFourUser" />
+      <option name="METHOD_NAME" value="testLogOutUser3" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -437,14 +511,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="Test1.testInsertUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test1.testLoginUser2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="ms-ma--backend-test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Test1" />
-      <option name="METHOD_NAME" value="testInsertUser" />
+      <option name="METHOD_NAME" value="testLoginUser2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -457,14 +531,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="Test1.testLogOut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test1.testLoginUser3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="ms-ma--backend-test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Test1" />
-      <option name="METHOD_NAME" value="testLogOut" />
+      <option name="METHOD_NAME" value="testLoginUser3" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -477,14 +551,34 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="Test1.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test1.testMyWaitingList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="ms-ma--backend-test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Test1" />
-      <option name="METHOD_NAME" value="testLogin" />
+      <option name="METHOD_NAME" value="testMyWaitingList" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="Test1.user2NewFriendRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="ms-ma--backend-test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Test1" />
+      <option name="METHOD_NAME" value="user2NewFriendRequest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -558,19 +652,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.StartApp" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.Test1.testInsertUser" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.Test1.testInsertFourUser" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.Test1.testLogin" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Test1.testLogOut" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.Test1.testLoginUser3" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.Test1.user2NewFriendRequest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.Test1.testLogOutUser3" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Test1.testLoginUser2" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.Test1.testMyWaitingList" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.Test1.testLogin" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Test1.testLogOut" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Test1.testInsertFourUser" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.Test1.testInsertUser" />
-        <item index="4" class="java.lang.String" itemvalue="Application.StartApp" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Test1.testMyWaitingList" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.Test1.testLoginUser2" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Test1.testLogOutUser3" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.Test1.user2NewFriendRequest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.Test1.testLoginUser3" />
       </list>
     </recent_temporary>
   </component>
@@ -596,35 +690,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test1_testInsertFourUser - 2018.08.21 at 00h 02m 25s.xml">
-      <configuration name="Test1.testInsertFourUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Test1_testInsertUser - 2018.08.21 at 00h 02m 17s.xml">
-      <configuration name="Test1.testInsertUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Test1_testLogOut - 2018.08.21 at 00h 00m 20s.xml">
+    <history-entry file="Test1_testLogOut - 2018.08.21 at 02h 34m 58s.xml">
       <configuration name="Test1.testLogOut" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test1_testLogOut - 2018.08.21 at 00h 02m 36s.xml">
-      <configuration name="Test1.testLogOut" configurationId="JUnit" />
+    <history-entry file="Test1_testLogOutUser2 - 2018.08.21 at 02h 35m 43s.xml">
+      <configuration name="Test1.testLogOutUser2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test1_testLogOut - 2018.08.21 at 00h 02m 42s.xml">
-      <configuration name="Test1.testLogOut" configurationId="JUnit" />
+    <history-entry file="Test1_testLogOutUser3 - 2018.08.21 at 02h 36m 43s.xml">
+      <configuration name="Test1.testLogOutUser3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test1_testLogOut - 2018.08.21 at 00h 03m 13s.xml">
-      <configuration name="Test1.testLogOut" configurationId="JUnit" />
+    <history-entry file="Test1_testLoginUser2 - 2018.08.21 at 02h 35m 03s.xml">
+      <configuration name="Test1.testLoginUser2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test1_testLogin - 2018.08.21 at 00h 02m 32s.xml">
-      <configuration name="Test1.testLogin" configurationId="JUnit" />
+    <history-entry file="Test1_testLoginUser2 - 2018.08.21 at 02h 36m 51s.xml">
+      <configuration name="Test1.testLoginUser2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test1_testLogin - 2018.08.21 at 00h 02m 54s.xml">
-      <configuration name="Test1.testLogin" configurationId="JUnit" />
+    <history-entry file="Test1_testLoginUser3 - 2018.08.21 at 02h 35m 50s.xml">
+      <configuration name="Test1.testLoginUser3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test1_testLogin - 2018.08.21 at 00h 03m 00s.xml">
-      <configuration name="Test1.testLogin" configurationId="JUnit" />
+    <history-entry file="Test1_testMyWaitingList - 2018.08.21 at 02h 35m 11s.xml">
+      <configuration name="Test1.testMyWaitingList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test1_testLogin - 2018.08.21 at 00h 03m 19s.xml">
-      <configuration name="Test1.testLogin" configurationId="JUnit" />
+    <history-entry file="Test1_testMyWaitingList - 2018.08.21 at 02h 36m 58s.xml">
+      <configuration name="Test1.testMyWaitingList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test1_user2NewFriendRequest - 2018.08.21 at 02h 34m 49s.xml">
+      <configuration name="Test1.user2NewFriendRequest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test1_user2NewFriendRequest - 2018.08.21 at 02h 36m 29s.xml">
+      <configuration name="Test1.user2NewFriendRequest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -648,7 +742,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44329897" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44329897" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -659,7 +753,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977092" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -667,13 +761,41 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977092" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44329897" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20108695" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -867,34 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/StartApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="96" column="8" lean-forward="false" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/content/modal/login/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -918,64 +1012,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/MyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="91" column="36" lean-forward="true" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
-          <folding>
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="method#userExists#0;class#MyApplication#0" expanded="false" />
-            <element signature="method#isUserAndPasswd#0;class#MyApplication#0" expanded="false" />
-            <element signature="method#addUserInUserList#0;class#MyApplication#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/content/modal/user/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/VisibilityServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-          <folding>
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#795#796#0" expanded="true" />
-            <element signature="e#2292#2293#0" expanded="true" />
-            <element signature="e#2326#2327#0" expanded="true" />
-            <element signature="e#2374#2375#0" expanded="true" />
-            <element signature="e#2412#2413#0" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
-            <element signature="e#2490#2491#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/user/UserServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding>
-            <element signature="method#userNameIsUnique#0;class#UserServices#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -987,23 +1028,156 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/visibility/VisibilityServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/login/LoginServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="67" column="46" lean-forward="false" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
+        <state relative-caret-position="248">
+          <caret line="31" column="58" lean-forward="false" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/StartApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Test1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="51" column="16" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="44" />
+        <state relative-caret-position="331">
+          <caret line="91" column="24" lean-forward="false" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#insertFourUsers#0;class#Test1#0" expanded="false" />
+            <element signature="method#testLogin#0;class#Test1#0" expanded="false" />
+            <element signature="method#testLoginUser2#0;class#Test1#0" expanded="false" />
+            <element signature="method#testLoginUser3#0;class#Test1#0" expanded="false" />
+            <element signature="method#testLoginUser4#0;class#Test1#0" expanded="false" />
+            <element signature="method#testLogOut#0;class#Test1#0" expanded="false" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1641#1642#0" expanded="true" />
+            <element signature="e#1680#1681#0" expanded="true" />
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1757#1758#0" expanded="true" />
+            <element signature="e#1796#1797#0" expanded="true" />
+            <element signature="e#1837#1838#0" expanded="true" />
+            <element signature="e#1875#1876#0" expanded="true" />
+            <element signature="e#1912#1913#0" expanded="true" />
+            <element signature="e#1943#1944#0" expanded="true" />
+            <element signature="e#1988#1989#0" expanded="true" />
+            <element signature="e#2026#2027#0" expanded="true" />
+            <element signature="e#2071#2072#0" expanded="true" />
+            <element signature="e#2109#2110#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
+            <element signature="e#2192#2193#0" expanded="true" />
+            <element signature="e#2237#2238#0" expanded="true" />
+            <element signature="e#2275#2276#0" expanded="true" />
+            <element signature="e#2318#2319#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2399#2400#0" expanded="true" />
+            <element signature="e#2438#2439#0" expanded="true" />
+            <element signature="e#2480#2481#0" expanded="true" />
+            <element signature="e#2519#2520#0" expanded="true" />
+            <element signature="e#2561#2562#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
+            <element signature="e#2641#2642#0" expanded="true" />
+            <element signature="e#2678#2679#0" expanded="true" />
+            <element signature="e#2718#2719#0" expanded="true" />
+            <element signature="e#2755#2756#0" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2832#2833#0" expanded="true" />
+            <element signature="e#2872#2873#0" expanded="true" />
+            <element signature="e#2909#2910#0" expanded="true" />
+            <element signature="method#acceptFriend#0;class#Test1#0" expanded="false" />
+            <element signature="method#declineRequest#0;class#Test1#0" expanded="false" />
+            <element signature="method#insertUser#0;class#Test1#0" expanded="false" />
+            <element signature="method#sendPut#0;class#Test1#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/controller/firend/FriendController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/friend/FriendServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="112" column="59" lean-forward="false" selection-start-line="112" selection-start-column="59" selection-end-line="112" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#acceptNewFriend#0;class#FriendServices#0" expanded="false" />
+            <element signature="method#declineFriendResponse#0;class#FriendServices#0" expanded="false" />
+            <element signature="method#myFriendsList#0;class#FriendServices#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/service/user/UserServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding>
+            <element signature="method#userNameIsUnique#0;class#UserServices#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/modal/UserParams.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="60" column="4" lean-forward="true" selection-start-line="60" selection-start-column="4" selection-end-line="69" selection-end-column="5" />
+          <folding>
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#1368#1369#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#2727#2728#0" expanded="true" />
+            <element signature="e#2761#2762#0" expanded="true" />
+            <element signature="e#2809#2810#0" expanded="true" />
+            <element signature="e#2847#2848#0" expanded="true" />
+            <element signature="e#2888#2889#0" expanded="true" />
+            <element signature="e#2925#2926#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/content/MyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="65" column="13" lean-forward="true" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+          <folding>
+            <element signature="e#1019#1020#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2280#2281#0" expanded="true" />
+            <element signature="e#2326#2327#0" expanded="true" />
+            <element signature="e#2381#2382#0" expanded="true" />
+            <element signature="method#isUserAndPasswd#0;class#MyApplication#0" expanded="false" />
+            <element signature="method#addUserInUserList#0;class#MyApplication#0" expanded="false" />
           </folding>
         </state>
       </provider>
