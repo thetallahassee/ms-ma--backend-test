@@ -17,6 +17,12 @@ public class UserServices {
     GeneralServices generalServices;
     @Autowired
     VisibilityServices visibilityServices;
+
+    /**
+     * Returns a Response object. Create a new user and assign it to the list. Check that the name and password meet the pattern
+     * @param jsonUser
+     * @return
+     */
     public Response createNewUserService(String jsonUser){
         int code = 0;
         String message = "";
@@ -53,6 +59,11 @@ public class UserServices {
         return new Response(code, message);
     }
 
+    /**
+     * Returns if there are matches with the name
+     * @param username
+     * @return
+     */
     private boolean userNameIsUnique(String username){
         boolean unique = true;
         for(User userLoop : myApplication.getUserList()){
@@ -71,6 +82,11 @@ public class UserServices {
         }
     }*/
 
+    /**
+     * Update the user's visibility type parameter
+     * @param userParStr
+     * @return
+     */
     public Response updateUserParamsVisibility(String userParStr){
         User userNewParams = generalServices.mappingUser(userParStr);
         Response response = new Response(400, "Error to modify visibility or user not found");
@@ -85,6 +101,12 @@ public class UserServices {
         }
         return response;
     }
+
+    /**
+     * Returns the corresponding user to the name
+     * @param userNameReq
+     * @return
+     */
     public User getUserFromListByUserName(String userNameReq){
         User userReq = null;
         for(User user:myApplication.getUserList()){

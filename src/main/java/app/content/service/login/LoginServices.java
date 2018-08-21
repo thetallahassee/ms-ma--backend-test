@@ -18,6 +18,11 @@ public class LoginServices {
     @Autowired
     GeneralServices generalServices;
 
+    /**
+     * Returns a Response object. Create a Login object checking that there are no conflicts
+     * @param jsonUserParams
+     * @return
+     */
     public Response createLogin(String jsonUserParams){
         int code;
         String message;
@@ -34,6 +39,10 @@ public class LoginServices {
         return new Response(code,message);
     }
 
+    /**
+     * Assign login to the generic variable
+     * @param user
+     */
     private void loginToApp(User user) {
         Login login = new Login(user);
         myApplication.setUserLoggedNow(login);
@@ -46,6 +55,12 @@ public class LoginServices {
         return generalServices.isExistUser(username);
     }
 
+    /**
+     * Returns a Response object. Assign the null value to the generic variable and
+     * check that the requestor is the same one that is logged in
+     * @param username
+     * @return
+     */
     public Response logOut(String username) {
         //Response response = null;
         try{

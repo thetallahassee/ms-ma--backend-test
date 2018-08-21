@@ -40,6 +40,9 @@ class Test1 {
         errorsListPrint();
     }*/
 
+    /**
+     * BLOCK CREATE USERS
+     */
     @Test
     void testInsertFourUsers(){
         insertFourUsers();
@@ -47,6 +50,9 @@ class Test1 {
         errorsListPrint();
     }
 
+    /**
+     * BLOCK LOGIN USER
+     */
     @Test
     void testLoginUser1(){
         loginWithUser("user1", passwdGen);
@@ -68,89 +74,131 @@ class Test1 {
         errorsListPrint();
     }
 
+
+    /**
+     * BLOCK LOGOUT USER
+     */
     @Test
     void testLogOutUser1(){
         logOutWithUser("user1");
+        errorsListPrint();
     }
 
     @Test
     void testLogOutUser2(){
         logOutWithUser("user2");
+        errorsListPrint();
     }
 
     @Test
     void testLogOutUser3(){
         logOutWithUser("user3");
+        errorsListPrint();
     }
     @Test
     void testLogOutUser4(){
         logOutWithUser("user4");
+        errorsListPrint();
     }
 
+    /**
+     * BLOCK GET MY WAITING LIST
+     */
     @Test
     void testMyWaitingList(){
         myWaitingFriendsList();
+        errorsListPrint();
     }
 
+    /**
+     * BLOCK GET MY FRIENDS
+     */
     @Test
     void testMyFriends(){
         myFriendsList();
+        errorsListPrint();
     }
 
+    /**
+     * BLOCK FRIEND REQUEST
+     */
     @Test
     void user1NewFriendRequest(){
         friendRequest("user1");
+        errorsListPrint();
     }
 
     @Test
     void user2NewFriendRequest(){
         friendRequest("user2");
+        errorsListPrint();
     }
 
     @Test
     void user3NewFriendRequest(){
         friendRequest("user3");
+        errorsListPrint();
     }
 
     @Test
     void user4NewFriendRequest(){
         friendRequest("user4");
+        errorsListPrint();
     }
 
+    /**
+     * BLOCK DECLINE FRIEND REQUEST
+     */
     @Test
     void user1DeclineRequest(){
         declineRequest("user1");
+        errorsListPrint();
     }
     @Test
     void user2DeclineRequest(){
         declineRequest("user2");
+        errorsListPrint();
     }
     @Test
     void user3DeclineRequest(){
         declineRequest("user3");
+        errorsListPrint();
     }
     @Test
     void user4DeclineRequest(){
         declineRequest("user4");
+        errorsListPrint();
     }
 
+    /**
+     * BLOCK ACCEPT NEW FRIEND
+     */
     @Test
     void user1AcceptFriend(){
         acceptFriend("user1");
+        errorsListPrint();
     }
     @Test
     void user2AcceptFriend(){
         acceptFriend("user2");
+        errorsListPrint();
     }
     @Test
     void user3AcceptFriend(){
         acceptFriend("user3");
+        errorsListPrint();
     }
     @Test
     void user4AcceptFriend(){
         acceptFriend("user4");
+        errorsListPrint();
     }
 
+
+    /**
+     *
+     * FUNCTIONS
+     */
     void acceptFriend(String username){
         String path = "http://localhost:8080/friend/acceptFriend";
         try{

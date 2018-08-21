@@ -6,13 +6,19 @@ import app.content.service.login.LoginServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping("/auth")
 public class LoginController {
     @Autowired
     LoginServices loginServices;
 
+    /**
+     *
+     Login action
+     * @param jsonUserParams
+     * @return
+     * @throws ExceptionManager
+     */
     @CrossOrigin
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Response loginUser(@RequestBody String jsonUserParams) throws ExceptionManager {
@@ -20,6 +26,12 @@ public class LoginController {
         return loginServices.createLogin(jsonUserParams);
     }
 
+    /**
+     * Logout action
+     * @param jsonUserName
+     * @return
+     * @throws ExceptionManager
+     */
     @CrossOrigin
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     @ResponseBody

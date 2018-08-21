@@ -1,7 +1,6 @@
 package app.content.modal.user;
 
 import app.content.ExceptionManager;
-import app.content.modal.UserParams;
 import app.content.service.GeneralServices;
 import org.springframework.beans.factory.annotation.Autowired;
 

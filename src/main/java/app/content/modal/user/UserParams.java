@@ -1,5 +1,6 @@
-package app.content.modal;
+package app.content.modal.user;
 
+import app.content.modal.Visibility;
 import app.content.modal.user.User;
 
 import java.util.ArrayList;

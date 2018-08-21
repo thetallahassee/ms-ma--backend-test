@@ -22,16 +22,12 @@ public class FriendServices {
     @Autowired
     UserServices userServices;
 
-    public void returnFriendsWaitingFromUser(){
-
-    }
-    public void returnFriendsFromUser(){
-
-    }
-    public void returnFriendsRejectedFromUser(){
-
-    }
-
+    /**
+     * Service to accept a new friend. Check if it is already a friend or is pending, if so, add it to the friends list.
+     * Return Response object with the result
+     * @param userNameToAdd
+     * @return
+     */
     public Response acceptNewFriend(String userNameToAdd){
         //Response response = null;
         try{
@@ -59,6 +55,12 @@ public class FriendServices {
         return response;
     }
 
+    /**
+     * Service to delete a waiting request or a friend from the list. Assigns the "regection" parameter (does not work).
+     * Return Response object with the result
+     * @param userNameToDecline
+     * @return
+     */
     public Response declineFriendResponse(String userNameToDecline){
         try{
             User myUser = myApplication.getUserLoggedNow().getUserLogged();
@@ -94,6 +96,10 @@ public class FriendServices {
         return response;
     }
 
+    /**
+     *Returns the Response object with the result. The list of friends of the registered user
+     * @return
+     */
     public Response myFriendsList(){
         //Response response = null;
         try {
@@ -110,15 +116,15 @@ public class FriendServices {
         return response;
     }
 
+    /**
+     * Returns the Response object with the result. The list of waiting applications
+     * @return
+     */
     public Response myWaitingList(){
-        //Response response = null;
         try {
             User myUser = myApplication.getUserLoggedNow().getUserLogged();
 
             Gson gson = new Gson();
-            System.out.println("MY USER NAME "+myUser.getUserName());
-            //System.out.println("LISTA DE ESPERA "+myUser.getWaitFriendsList());
-
             List<String>myWaitingList = myApplication.getWaitingLists().get(myUser.getUserName());
 
             response.setCode(200);
@@ -131,6 +137,12 @@ public class FriendServices {
         return response;
     }
 
+    /**
+     * Returns the Response object with the result. Add the user of the parameter to the pending list of the
+     * registered user.
+     * @param requestedUser
+     * @return
+     */
     public Response addToWaitingList(String requestedUser){
         //Response response = null;
         try{
@@ -153,19 +165,14 @@ public class FriendServices {
         return response;
     }
 
+    /**
+     * Returns the Response object with the result. Check if users are friends or have pending request
+     * @param myUser
+     * @param userReq
+     * @return
+     */
     private Response checkIntoLists(User myUser, User userReq){
-        //Response response = null;
         System.out.println("CHECK INTO LISTS");
-        /*if(userReq.getFriendsList() == null){
-            System.out.println("INIT LIST");
-            userReq.setFriendsList(new ArrayList<>());
-        }
-        if(userReq.getWaitFriendsList() == null){
-            System.out.println("INIT LIST");
-            userReq.setWaitFriendsList(new ArrayList<>());
-        }*/
-        //boolean isFriend = loopListsFriend(myUser.getUserName(), userReq.getFriendsList());
-        //boolean isWaiting = loopListsFriend(myUser.getUserName(), userReq.getWaitFriendsList());
         boolean isFriend = checkIsFriend(myUser.getUserName(),userReq.getUserName());
         boolean isWaiting = checkIsWaiting(myUser.getUserName(),userReq.getUserName());
         System.out.println("CHECKED");
@@ -186,46 +193,38 @@ public class FriendServices {
             response.setCode(400);
             response.setMessage("you are requesting yourself");
         }
-
         return response;
     }
 
-    public void addToFriendsList(){
-
-    }
-
-    public void addToRejectedList(){
-
-    }
-
-    /*private boolean myUserIsAFriend(String requestedUser){
-        boolean isFriend = false;
-        User myUser = myApplication.getUserLoggedNow().getUserLogged();
-        User userReq = userServices.getUserFromListByUserName(requestedUser);
-
-        for(String userName : userReq.getFriendsList()){
-            if(userName.equals(myUser.getUserName())){
-                isFriend = true;
-                break;
-            }
-        }
-        return isFriend;
-    }
-
-    private boolean myUserIsWaiting(String requestedUser){
-
-    }*/
-
+    /**
+     * Returns true / false. Check if users are friends
+     * @param userLogged
+     * @param userToFind
+     * @return
+     */
     private boolean checkIsFriend(String userLogged, String userToFind){
         List<String>listFr = myApplication.getFriendsLists().get(userLogged);
         return loopListsFriend(userToFind, listFr);
     }
+
+    /**
+     * Returns true / false. Check if users are waiting
+     * @param userLogged
+     * @param userToFind
+     * @return
+     */
     private boolean checkIsWaiting(String userLogged, String userToFind){
         List<String>listWait = myApplication.getWaitingLists().get(userToFind);
         return loopListsFriend(userLogged, listWait);
 
     }
 
+    /**
+     * Returns true / false. Returns if there are users matching in a list
+     * @param userToFind
+     * @param list
+     * @return
+     */
     private boolean loopListsFriend(String userToFind, List<String>list){
         boolean coincidence = false;
         for(String userName : list){

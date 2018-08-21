@@ -1,16 +1,18 @@
 package app.content;
 
 import app.content.modal.Visibility;
-import app.content.modal.friendly.State;
 import app.content.modal.login.Login;
 import app.content.modal.user.User;
 
 import java.util.*;
 
+/**
+ *
+ This class simulates the data that we would extract from a database
+ */
 public class MyApplication {
     private List<User> userList;
     public List<Visibility> visibilityList;
-    private List<State>friendStatesOptions;
 
     private Map<String,List<String>> waitingLists;
     private Map<String,List<String>> friendsLists;
@@ -28,7 +30,6 @@ public class MyApplication {
     public void initDefaultParams(){
         initUsertList();
         initDefaultOptionsVisibility();
-        initDefaultOptionsState();
         this.setUserLoggedNow(null);
         this.waitingLists = new HashMap<>();
         this.friendsLists = new HashMap<>();
@@ -79,9 +80,6 @@ public class MyApplication {
         return visibilityList;
     }
 
-    private void initDefaultOptionsState() {
-        friendStatesOptions = new ArrayList<>();
-    }
 
     private void initUsertList(){
         System.out.println("INICIAR LISTA");

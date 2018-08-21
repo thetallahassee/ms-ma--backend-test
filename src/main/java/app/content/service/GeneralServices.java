@@ -12,15 +12,29 @@ import static app.StartApp.myApplication;
 @Service("generalServices")
 public class GeneralServices {
 
+    /**
+     * Returns if the user exists
+     * @param username
+     * @return
+     */
     public boolean isExistUser(String username){
         return myApplication.userExists(username);
     }
 
+    /**
+     *
+     * @param user
+     * @return
+     */
     public boolean isUserAndPasswd(User user){
         return myApplication.isUserAndPasswd(user);
     }
 
-
+    /**
+     * Mapping from string to object user
+     * @param jsonContent
+     * @return
+     */
     public User mappingUser(String jsonContent){
         System.out.println("MAPPING "+jsonContent);
         Gson gson = new Gson();
@@ -33,6 +47,11 @@ public class GeneralServices {
         return user;
     }
 
+    /**
+     * String pattern
+     * @param param
+     * @return
+     */
     public boolean patternOnlyLetterAndNumber(String param){
         System.out.println("ENTRA AL PATTERN");
         String regex = "^[a-zA-Z0-9]+$";

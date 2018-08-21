@@ -12,6 +12,12 @@ public class FriendController {
     @Autowired
     FriendServices friendServices;
 
+    /**
+     *Create a new friend request action, return a Response with the result
+     * @param requestedUserName
+     * @return response
+     * @throws ExceptionManager
+     */
     @CrossOrigin
     @RequestMapping(value = "/newFriendRequest", method = RequestMethod.POST)
     @ResponseBody
@@ -19,6 +25,13 @@ public class FriendController {
         return friendServices.addToWaitingList(requestedUserName);
     }
 
+    /**
+     *
+     Create a new request rejection action, return a Response with the result
+     * @param requestedUserName
+     * @return response
+     * @throws ExceptionManager
+     */
     @CrossOrigin
     @RequestMapping(value = "/declineRquest", method = RequestMethod.POST)//sirve para cargarse amigos o solicitudes
     @ResponseBody
@@ -26,6 +39,12 @@ public class FriendController {
         return friendServices.declineFriendResponse(requestedUserName);
     }
 
+    /**
+     * Create a new action to add the requesting friend, return a Response with the result
+     * @param requestedUserName
+     * @return response
+     * @throws ExceptionManager
+     */
     @CrossOrigin
     @RequestMapping(value = "/acceptFriend", method = RequestMethod.POST)
     @ResponseBody
@@ -33,6 +52,11 @@ public class FriendController {
         return friendServices.acceptNewFriend(requestedUserName);
     }
 
+    /**
+     * Returns the list of pending requests of the registered user
+     * @return response
+     * @throws ExceptionManager
+     */
     @CrossOrigin
     @RequestMapping(value = "/myWaitingList", method = RequestMethod.GET)
     @ResponseBody
@@ -40,6 +64,11 @@ public class FriendController {
         return friendServices.myWaitingList();
     }
 
+    /**
+     * Returns the list of friends of the registered user
+     * @return response
+     * @throws ExceptionManager
+     */
     @CrossOrigin
     @RequestMapping(value = "/myFriendsList", method = RequestMethod.GET)
     @ResponseBody

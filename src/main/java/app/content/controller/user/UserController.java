@@ -12,6 +12,12 @@ public class UserController {
     @Autowired
     private UserServices userServices;
 
+    /**
+     * Create new user
+     * @param jsonUser
+     * @return
+     * @throws ExceptionManager
+     */
     @CrossOrigin
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     @ResponseBody
@@ -20,6 +26,12 @@ public class UserController {
         return userServices.createNewUserService(jsonUser);
     }
 
+    /**
+     * Update user params
+     * @param jsonUser
+     * @return
+     * @throws ExceptionManager
+     */
     @CrossOrigin
     @RequestMapping(value = "/new", method = RequestMethod.PUT)
     @ResponseBody
