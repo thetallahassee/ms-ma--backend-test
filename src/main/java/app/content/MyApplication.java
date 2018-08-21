@@ -43,25 +43,27 @@ public class MyApplication {
         return friendsLists;
     }
 
-    public void addIntoFriendList(String userLogged, String userToFind){
-        List<String> list = this.friendsLists.get(userToFind);
-        list.add(userLogged);
-        this.friendsLists.put(userToFind, list);
+    public void addOneUserInMyFriendList(String userLogged, String userToAdd){
+
+        List<String> list = this.friendsLists.get(userLogged);
+        list.add(userToAdd);
+        this.friendsLists.put(userLogged, list);
         //Remove from waiting
-        removeElementFromWaitingList(userToFind, userLogged);
+        removeElementFromWaitingList(userLogged, userToAdd);
     }
 
     private void removeElementFromWaitingList(String userToFind,String userDelete){
         List<String> list = this.waitingLists.get(userToFind);
-        deleteWaitingFriend(list, userDelete);
+        deleteElementFriendFromList(list, userDelete);
     }
 
-    public void deleteWaitingFriend(List<String> list, String userDelete){ ;
+    public void deleteElementFriendFromList(List<String> list, String userDelete){
+        System.out.println("DELETE ELEMENT");
         Iterator itr = list.iterator();
 
         while (itr.hasNext()){
-            User x = (User)itr.next();
-            if(x.getUserName().equals(userDelete)){
+            String x = (String)itr.next();
+            if(x.equals(userDelete)){
                 itr.remove();
             }
         }

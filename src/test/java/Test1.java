@@ -34,22 +34,22 @@ class Test1 {
         errorsListPrint();*/
     }
 
-    @Test
+    /*@Test
     void testInsertUser(){
         insertUser();
         errorsListPrint();
-    }
+    }*/
 
     @Test
-    void testInsertFourUser(){
+    void testInsertFourUsers(){
         insertFourUsers();
-        userToLog = userList.get(0);
+        //userToLog = userList.get(0);
         errorsListPrint();
     }
 
     @Test
-    void testLogin(){
-        login();
+    void testLoginUser1(){
+        loginWithUser("user1", passwdGen);
         errorsListPrint();
     }
     @Test
@@ -69,9 +69,8 @@ class Test1 {
     }
 
     @Test
-    void testLogOut(){
-        logOut();
-        errorsListPrint();
+    void testLogOutUser1(){
+        logOutWithUser("user1");
     }
 
     @Test
@@ -369,7 +368,7 @@ class Test1 {
     }
 
     private void insertFourUsers(){
-        for(int i=2; i<5; i++){
+        for(int i=1; i<5; i++){
             Response resp = null;
             String path = "http://localhost:8080/user/new";
 
